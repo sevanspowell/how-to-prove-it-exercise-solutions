@@ -59,6 +59,7 @@ library
   -- Other library packages from which modules are imported.
   build-depends:       base >=4.10 && <4.11
                      , containers
+                     , lhs2tex
   
   -- Directories containing source files.
   hs-source-dirs:      src

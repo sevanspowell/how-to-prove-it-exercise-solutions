@@ -1,0 +1,223 @@
+* Chapter 1.2 Exercise Solutions
+
+** Exercise 1
+*** 1a
+
+| P | Q | (¬P ∨ Q) |
+|---+---+----------|
+| F | F | T        |
+| F | T | T        |
+| T | F | F        |
+| T | T | T        |
+
+*** 1b
+
+| S | G | (S ∨ G) ∧ (¬S ∨ ¬G) |
+|---+---+---------------------|
+| F | F | F                   |
+| F | T | T                   |
+| T | F | T                   |
+| T | T | F                   |
+
+** Exercise 2
+*** 2a
+
+| P | Q | ¬[P ∧ (Q ∨ ¬P)] |
+|---+---+-----------------|
+| F | F | T               |
+| F | T | T               |
+| T | F | T               |
+| T | T | F               |
+
+*** 2b
+
+| P | Q | R | (P ∨ Q) ∧ (¬P ∨ R) |
+|---+---+---+--------------------|
+| F | F | F | F                  |
+| F | F | T | F                  |
+| F | T | F | T                  |
+| F | T | T | T                  |
+| T | F | F | F                  |
+| T | F | T | T                  |
+| T | T | F | F                  |
+| T | T | T | T                  |
+
+** Exercise 3
+*** 3a
+
+| P | Q | P + Q |
+|---+---+-------|
+| F | F | F     |
+| F | T | T     |
+| T | F | T     |
+| T | T | F     |
+
+*** 3b
+
+| P | Q | (P ∨ Q) ∧ (P ∨ Q) |
+|---+---+-------------------|
+| F | F | F                 |
+| F | T | T                 |
+| T | F | T                 |
+| T | T | F                 |
+
+** Exercise 4
+
+¬(¬P ∧ ¬Q)
+
+| P | Q | (P ∨ Q) | ¬(¬P ∧ ¬Q) |
+|---+---+---------+------------|
+| F | F | F       | F          |
+| F | T | T       | T          |
+| T | F | T       | T          |
+| T | T | T       | T          |
+
+** Exercise 5
+
+*** 5a
+
+| P | Q | P ↓ Q |
+|---+---+-------|
+| F | F | T     |
+| F | T | F     |
+| T | F | F     |
+| T | T | F     |
+
+*** 5b
+¬P ∧ ¬Q
+
+*** 5c
+- ¬P is equivalent to P ↓ P
+- P ∨ Q is equivalent to (P ↓ Q) ↓ (P ↓ Q)
+- P ∧ Q is equivalent to (P ↓ P) ↓ (Q ↓ Q)
+
+** Exercise 6
+
+*** 6a
+
+| P | Q | P \vert Q |
+|---+---+-----------|
+| F | F | T         |
+| F | T | T         |
+| T | F | T         |
+| T | T | F         |
+
+*** 6b
+
+- ¬(P ∧ Q) is equivalent to P | Q
+
+*** 6c
+
+- ¬P is equivalent to P | P
+- P ∨ Q is equivalent to (P | P) | (Q | Q)
+- P ∧ Q is equivalent to (P | Q) | (P | Q)
+
+** Exercise 7
+
+Let P = Pete will win the math prize
+    J = Jame will win the math prize
+    C = Pete will win the chemistry prize
+
+| P | J | C | ¬(P ∧ J) | (P ∨ C) | J | C |
+|---+---+---+----------+---------+---+---|
+| F | F | F | T        | F       | F | F |
+| F | F | T | T        | T       | F | T |
+| F | T | F | T        | F       | T | F |
+| F | T | T | T        | T       | T | T |
+| T | F | F | T        | T       | F | F |
+| T | F | T | T        | T       | F | T |
+| T | T | F | F        | T       | T | F |
+| T | T | T | F        | T       | T | T |
+
+C is true whenever all premises are true, therefore argument is valid.
+
+Let B = Main course will be beef
+    F = Main course will be fish
+    P = Vegetable will be peas
+    C = Vegetable will be corn
+
+B ∨ F
+P ∨ C
+¬(F ∧ C)
+--------
+(B ∧ P)
+
+| B | F | P | C | B ∨ F | P ∨ C | ¬(F ∧ C) | B ∧ P |    |
+|---+---+---+---+-------+-------+----------+-------+----|
+| F | F | F | F | F     | F     | T   F    | F     |    |
+| F | F | F | T | F     | T     | T   F    | F     |    |
+| F | F | T | F | F     | T     | T   F    | F     |    |
+| F | F | T | T | F     | T     | T   F    | F     |    |
+| F | T | F | F | T     | F     | T   F    | F     |    |
+| F | T | F | T | T     | T     | F   T    | F     |    |
+| F | T | T | F | T     | T     | T   F    | F     | :( |
+| F | T | T | T | T     | T     | F   T    | F     |    |
+| T | F | F | F | T     | F     | T   F    | F     |    |
+| T | F | F | T | T     | T     | T   F    | F     | :( |
+| T | F | T | F | T     | T     | T   F    | T     | :) |
+| T | F | T | T | T     | T     | T   F    | T     | :) |
+| T | T | F | F | T     | F     | T   F    | F     |    |
+| T | T | F | T | T     | T     | F   T    | F     |    |
+| T | T | T | F | T     | T     | T   F    | T     | :) |
+| T | T | T | T | T     | T     | F   T    | T     |    |
+
+There exists cases where all premises are true but conclusion is false therefore this is an invalid argument.
+
+Let J = John is telling the truth
+    B = Bill is telling the truth
+    S = Sam is telling the truth
+
+| J | B | S | J ∨ B | (¬S ∨ ¬B) | (J ∨ ¬S) |    |
+|---+---+---+-------+-----------+----------+----|
+| F | F | F | F     | T         | T        |    |
+| F | F | T | F     | T         | F        |    |
+| F | T | F | T     | T         | T        | :) |
+| F | T | T | T     | F         | F        |    |
+| T | F | F | T     | T         | T        |    |
+| T | F | T | T     | T         | T        | :) |
+| T | T | F | T     | T         | T        | :) |
+| T | T | T | T     | F         | T        |    |
+
+Conclusion is true when premises are true, therefore valid argument.
+
+Let S = Sales go up
+    X = Expenses go up
+    B = Boss will be happy
+
+
+| S | X | B | (S ∧ B) ∨ (X ∧ ¬B) | S \vert X |
+|---+---+---+--------------------+-----------|
+| F | F | F | F                  | T         |
+| F | F | T | F                  | T         |
+| F | T | F | T                  | F         |
+| F | T | T | F                  | F         |
+| T | F | F | F                  | F         |
+| T | F | T | T                  | F         |
+| T | T | F | T                  | F         |
+| T | T | T | T                  | F         |
+
+Argument is invalid because conclusion isn't always true when premise is true.
+
+** Exercise 8
+
+| P | Q | (P ∧ Q) ∨ (¬P ∧ ¬Q) | ¬P ∨ Q | (P ∨ ¬Q) ∧ (Q ∨ ¬P) | ¬(P ∨ Q) | (Q ∧ P) ∨ ¬P |
+|---+---+---------------------+--------+---------------------+----------+--------------|
+| F | F | T                   | T      | T                   | T        | T            |
+| F | T | F                   | T      | F                   | F        | T            |
+| T | F | F                   | F      | F                   | F        | F            |
+| T | T | T                   | T      | T                   | F        | T            |
+
+(Q ∧ P) ∨ ¬P and
+(P ∨ ¬Q) ∧ (Q ∨ ¬P) are equivalent.
+
+¬P ∨ Q and
+(Q ∧ P) ∨ ¬P are equivalent.
+
+** Exercise 9
+
+a) Neither.
+b) Contradiction.
+c) Tautology.
+d) Tautology.
+
+** Exercise 10

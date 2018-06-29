@@ -130,4 +130,5 @@ findTripletPrimes primes =
     onlyTriplets (a, b, c) = (abs (a - b) == 2 && abs (b - c) == 2)
 \end{code}
 
-For the prime numbers up to 3000, there are no more triplet primes.
+Was not able to determine, but for the prime numbers up to 3000 there are no
+more triplet primes.
