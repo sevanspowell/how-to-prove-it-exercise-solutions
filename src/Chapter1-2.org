@@ -221,3 +221,61 @@ c) Tautology.
 d) Tautology.
 
 ** Exercise 10
+
+*** 10a
+DeMorgan's second law is ¬(P ∨ Q) is equivalent to ¬P ∧ ¬Q.
+
+| P | Q | ¬(P ∨ Q) | ¬P ∧ ¬Q |
+|---+---+----------+---------|
+| F | F | T        | T       |
+| F | T | F        | F       |
+| T | F | F        | F       |
+| T | T | F        | F       |
+
+*** 10b
+The distributive laws are:
+- P ∧ (Q ∨ R) is equivalent to (P ∧ Q) ∨ (P ∧ R)
+
+| P | Q | R | P ∧ (Q ∨ R) | (P ∧ Q) ∨ (P ∧ R) |
+|---+---+---+-------------+-------------------|
+| F | F | F | F           | F                 |
+| F | F | T | F           | F                 |
+| F | T | F | F           | F                 |
+| F | T | T | F           | F                 |
+| T | F | F | F           | F                 |
+| T | F | T | T           | T                 |
+| T | T | F | T           | T                 |
+| T | T | T | T           | T                |
+
+- P ∨ (Q ∧ R) is equivalent to (P ∨ Q) ∧ (P ∨ R)
+
+| P | Q | R | P ∨ (Q ∧ R) | (P ∨ Q) ∧ (P ∨ R) |
+|---+---+---+-------------+-------------------|
+| F | F | F | F           | F                 |
+| F | F | T | F           | F                 |
+| F | T | F | F           | F                 |
+| F | T | T | T           | T                 |
+| T | F | F | T           | T                 |
+| T | F | T | T           | T                 |
+| T | T | F | T           | T                 |
+| T | T | T | T           | T                 |
+
+** Exercise 11
+
+*** 11 a
+¬(¬P ∧ ¬Q)
+¬¬P ∨ ¬¬Q  (DeMorgan's law)
+P ∨ Q      (double negation law)
+P ∨ Q
+
+*** 11 b
+(P ∧ Q) ∨ (P ∧ ¬Q)
+P ∧ (Q ∨ ¬Q)  (DeMorgan's law - in reverse)
+P             (tautology law)
+
+*** 11 c
+¬(P ∧ ¬Q) ∨ (¬P ∧ Q)
+¬P ∨ ¬¬ Q ∨ (¬P ∧ Q)  (DeMorgan's law)
+¬P ∨ Q ∨ (¬P ∧ Q)     (double negation law)
+¬P ∨ (Q ∨ (Q ∧ ¬P))   (associativity law & rearrange)
+¬P ∨ Q                (absorption law)
