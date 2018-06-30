@@ -54,12 +54,12 @@
 
 *** 3b
 
-| P | Q | (P ∨ Q) ∧ (P ∨ Q) |
-|---+---+-------------------|
-| F | F | F                 |
-| F | T | T                 |
-| T | F | T                 |
-| T | T | F                 |
+| P | Q | (P ∨ Q) ∧ ¬(P ∧ Q) |
+|---+---+--------------------|
+| F | F | F                  |
+| F | T | T                  |
+| T | F | T                  |
+| T | T | F                  |
 
 ** Exercise 4
 
@@ -245,7 +245,7 @@ The distributive laws are:
 | T | F | F | F           | F                 |
 | T | F | T | T           | T                 |
 | T | T | F | T           | T                 |
-| T | T | T | T           | T                |
+| T | T | T | T           | T                 |
 
 - P ∨ (Q ∧ R) is equivalent to (P ∨ Q) ∧ (P ∨ R)
 
@@ -279,3 +279,69 @@ P             (tautology law)
 ¬P ∨ Q ∨ (¬P ∧ Q)     (double negation law)
 ¬P ∨ (Q ∨ (Q ∧ ¬P))   (associativity law & rearrange)
 ¬P ∨ Q                (absorption law)
+
+** Exercise 12
+
+*** 12 a
+¬(¬P ∨ Q) ∨ (P ∧ ¬R)
+(¬¬P ∧ ¬Q) ∨ (P ∧ ¬R)  (DeMorgan's law)
+(P ∧ ¬Q) ∨ (P ∧ ¬R)    (double negation law)
+P ∧ (¬Q ∨ ¬R)          (distributive law)
+
+*** 12 b
+¬(¬P ∧ Q) ∨ (P ∧ ¬R)
+(¬¬P ∨ Q) ∨ (P ∧ ¬R)  (DeMorgan's law)
+(P ∨ Q) ∨ (P ∧ ¬R)    (double negation law)
+Q ∨ (P ∨ (P ∧ ¬R))    (associativity law & rearrange)
+Q ∨ P                 (absorption law)
+
+*** 12 c
+(P ∧ R) ∨ [¬R ∧ (P ∨ Q)]
+(P ∧ R) ∨ [(¬R ∧ P) ∨ (¬R ∧ Q)]  (distributive law)
+((P ∧ R) ∨ (P ∧ ¬R)) ∨ (¬R ∧ Q)  (associativity law & rearrange)
+(P ∧ (R ∨ ¬R)) ∨ (¬R ∧ Q)        (distributive law)
+P ∨ (¬R ∧ Q)                     (tautology law)
+
+** Exercise 13
+
+According to the double negation law, we know that:
+  ¬¬(P ∧ Q) is equivalent to (P ∧ Q)
+According to DeMorgan's first law, we can simplify this to:
+  ¬(¬P ∨ ¬Q) is equivalent to (P ∧ Q)
+We can use the double negation law again: 
+  ¬(¬P ∨ ¬Q) is equivalent to (¬¬P ∧ ¬¬Q)
+And if we perform the following substitution:
+  Let R = ¬P
+      S = ¬Q
+We get:
+  ¬(R ∨ S) is equivalent to (¬R ∧ ¬S)
+
+Which is DeMorgan's second law.
+
+** Exercise 14
+
+[P ∧ (Q ∧ R)] ∧ S
+[(P ∧ Q) ∧ R] ∧ S  (associativity law)
+(P ∧ Q) ∧ (R ∧ S)  (associativity law)
+
+** Exercise 15
+There will be 2^n lines.
+
+** Exercise 16
+P ∨ ¬Q
+
+** Exercise 17
+(P ∨ Q) ∧ ¬(P ∧ Q)
+
+** Exercise 18
+If the conclusion of an argument is a tautology, then you can say that the
+argument is valid, because the conclusion will always be true whenever the
+premises are true.
+
+If the conclusion of an argument is a contradiction, then you can say that the
+argument is invalid, as the conclusion will always be false whenever the
+premises are true.
+
+If one of the premises of an argument is a contradiction or tautology, you
+cannot say anything about the validity of the argument (either valid or
+invalid).
