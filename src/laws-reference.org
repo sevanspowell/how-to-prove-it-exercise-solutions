@@ -1,0 +1,45 @@
+* Logic Laws
+
+** DeMorgan's laws
+   ¬(P ∧ Q) is equivalent to ¬P ∨ ¬Q.
+   ¬(P ∨ Q) is equivalent to ¬P ∧ ¬Q.
+
+** Commutative laws
+   P ∧ Q is equivalent to Q ∧ P.
+   P ∨ Q is equivalent to Q ∨ P.
+
+** Associative laws
+   P ∧ (Q ∧ R) is equivalent to (P ∧ Q) ∧ R.
+   P ∨ (Q ∨ R) is equivalent to (P ∨ Q) ∨ R.
+
+** Idempotent laws
+   P ∧ P is equivalent to P.
+   P ∨ P is equivalent to P.
+
+** Distributive laws
+   P ∧ (Q ∨ R) is equivalent to (P ∧ Q) ∨ (P ∧ R).
+   P ∨ (Q ∧ R) is equivalent to (P ∨ Q) ∧ (P ∨ R).
+
+** Absorption laws
+   P ∨ (P ∧ Q) is equivalent to P.
+   P ∧ (P ∨ Q) is equivalent to P.
+
+** Double Negation law
+   ¬¬P is equivalent to P.
+
+** Tautology laws
+   P ∧ (a tautology) is equivalent to P.
+   P ∨ (a tautology) is a tautology.
+   ¬(a tautology) is a contradiction.
+
+** Contradiction laws
+   P ∧ (a contradiction) is a contradiction.
+   P ∨ (a contradiction) is equivalent to P.
+   ¬(a contradiction) is a tautology.
+
+** Conditional laws
+   P → Q is equivalent to ¬P ∨ Q.
+   P → Q is equivalent to ¬(P ∧ ¬Q).
+
+** Contrapositive law
+   P → Q is equivalent to ¬Q → ¬P.

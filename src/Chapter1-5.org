@@ -1,0 +1,159 @@
+* Chapter 1.5 Exercise Solutions
+
+** Exercise 1
+** Exercise 2
+** Exercise 3
+** Exercise 4
+*** 4a
+
+Let S = "Sales will go up"
+    X = "Expenses will go up"
+    B = "Boss will be happy"
+
+S ∨ X
+S → B
+X → ¬B
+------
+¬(S ∧ X)
+
+| S | X | B | ¬B | S ∨ X | S → B | X → ¬B | ¬(S ∧ X) | Valid |
+|---+---+---+----+-------+-------+--------+----------+-------|
+| F | F | F | T  | F     | T     | T      | T        |       |
+| F | F | T | F  | F     | T     | T      | T        |       |
+| F | T | F | T  | T     | T     | T      | T        | y     |
+| F | T | T | F  | T     | T     | F      | T        |       |
+| T | F | F | T  | T     | F     | T      | T        |       |
+| T | F | T | F  | T     | T     | T      | T        | y     |
+| T | T | F | T  | T     | F     | T      | F        |       |
+| T | T | T | F  | T     | T     | F      | F        |       |
+
+Conclusion is true whenever all premises are true, therefore argument is valid.
+
+*** 4b
+
+Let T = "Tax rate will go up"
+    U = "Unemployment rate will go up"
+    R = "There will be a recession"
+    G = "GNP goes up"
+
+T ∧ U → R
+G → ¬R
+G ∧ T
+----------
+¬U
+
+| T | U | R | G | T ∧ U | (T ∧ U) → R | G → ¬R | G ∧ T | ¬U | Valid |
+|---+---+---+---+-------+-------------+--------+-------+----+-------|
+| F | F | F | F | F     | T           | T      | F     | T  |       |
+| F | F | F | T | F     | T           | T      | F     | T  |       |
+| F | F | T | F | F     | T           | T      | F     | T  |       |
+| F | F | T | T | F     | T           | F      | F     | T  |       |
+| F | T | F | F | F     | T           | T      | F     | F  |       |
+| F | T | F | T | F     | T           | T      | F     | F  |       |
+| F | T | T | F | F     | T           | T      | F     | F  |       |
+| F | T | T | T | F     | T           | F      | F     | F  |       |
+| T | F | F | F | F     | T           | T      | F     | T  |       |
+| T | F | F | T | F     | T           | T      | T     | T  | y     |
+| T | F | T | F | F     | T           | T      | F     | T  |       |
+| T | F | T | T | F     | T           | F      | T     | T  |       |
+| T | T | F | F | T     | F           | T      | F     | F  |       |
+| T | T | F | T | T     | F           | T      | T     | F  |       |
+| T | T | T | F | T     | T           | T      | F     | F  |       |
+| T | T | T | T | T     | T           | F      | T     | F  |       |
+
+Conclusion is true whenever all premises are true, therefore argument is valid.
+
+*** 4c
+
+Let W = "The warning light will come on"
+    P = "The pressure is too high"
+    R = "Relief valve is clogged"
+    
+W <-> (P ∧ R)
+¬R
+-------------
+W <-> P
+
+| W | P | R | P ∧ R | W <-> (P ∧ R) | ¬R | W <-> P | Valid |
+|---+---+---+-------+---------------+----+---------+-------|
+| F | F | F | F     | T             | T  | T       | y     |
+| F | F | T | F     | T             | F  | T       |       |
+| F | T | F | F     | T             | T  | F       | n     |
+| F | T | T | T     | F             | F  | F       |       |
+| T | F | F | F     | F             | T  | F       |       |
+| T | F | T | F     | F             | F  | F       |       |
+| T | T | F | F     | F             | T  | T       |       |
+| T | T | T | T     | T             | F  | T       |       |
+
+Conclusion is not true whenever all premises are true, therefore argument is not valid.
+
+** Exercise 5
+*** 5a
+Goal: (P ∧ Q) ∨ (¬P ∧ ¬Q)
+
+| Step                                                          | Law used          |
+|---------------------------------------------------------------+-------------------|
+| P <-> Q                                                       |                   |
+| (P -> Q) ∧ (Q -> P)                                           | definition of <-> |
+| (¬P ∨ Q) ∧ (¬Q ∨ P)                                           | conditional law   |
+| ((¬P ∨ Q) ∧ (¬Q ∨ P)) ∧ (P ∨ ¬P)                              | tautology law     |
+| ((¬P ∨ Q) ∧ (P ∨ ¬P)) ∧ (¬Q ∨ P)                              | commutative law   |
+| ((¬P ∨ Q) ∧ (¬P ∨ P)) ∧ (¬Q ∨ P)                              | commutative law   |
+| (¬P ∨ (Q ∧ P)) ∧ (¬Q ∨ P)                                     | distributive law  |
+| (¬P ∧ (¬Q ∨ P)) ∨ ((Q ∧ P) ∧ (¬Q ∨ P))                        | distributive law  |
+| ((¬P ∧ ¬Q) ∨ (¬P ∧ P)) ∨ ((Q ∧ P) ∧ (¬Q ∨ P))                 | distributive law  |
+| (¬P ∧ ¬Q) ∨ ((Q ∧ P) ∧ (¬Q ∨ P))                              | contradiction law |
+| [(¬P ∧ ¬Q) ∨ (Q ∧ P)] ∧ [(¬P ∧ ¬Q) ∨ (¬Q ∨ P)]                | distributive law  |
+| [(¬P ∧ ¬Q) ∨ (Q ∧ P)] ∧ [ (¬P ∨ (¬Q ∨ P)) ∧ (¬Q ∨ (¬Q ∨ P)) ] | distributive law  |
+| [(¬P ∧ ¬Q) ∨ (Q ∧ P)] ∧ [ (¬P ∨ (P ∨ ¬Q)) ∧ (¬Q ∨ (¬Q ∨ P)) ] | commutative law   |
+| [(¬P ∧ ¬Q) ∨ (Q ∧ P)] ∧ [ ((¬P ∨ P) ∨ ¬Q) ∧ ((¬Q ∨ ¬Q) ∨ P) ] | associativity law |
+| [(¬P ∧ ¬Q) ∨ (Q ∧ P)] ∧ [ (((¬Q ∨ ¬Q) ∨ P) ]                  | tautology law     |
+| (¬P ∧ ¬Q) ∨ (Q ∧ P)                                           | tautology law     |
+| (P ∧ Q) ∨ (¬P ∧ ¬Q)                                           | commutative law   |
+
+Therefore P <-> Q is equivalent to (P ∧ Q) ∨ (¬P ∧ ¬Q).
+
+*** 5b
+Goal: P → (Q ∨ R)
+
+| Step                | Law used                         |
+|---------------------+----------------------------------|
+| (P → Q) ∨ (P → R)   |                                  |
+| (¬P ∨ Q) ∨ (¬P ∨ R) | conditional law                  |
+| (¬P ∨ ¬P) ∨ (Q ∨ R) | associative and commutative laws |
+| ¬P ∨ (Q ∨ R)        | idempotent law                   |
+| P → (Q ∨ R)         | conditional law                  |
+
+Therefore (P → Q) ∨ (P → R) is equivalent to P → (Q ∨ R).
+
+** Exercise 6
+
+*** 6a
+
+Goal: (P ∨ Q) → R
+
+| Step                             | Law used         |
+|----------------------------------+------------------|
+| (P → R) ∧ (Q → R)                |                  |
+| (¬P ∨ R) ∧ (¬Q ∨ R)              | conditional law  |
+| [(¬P ∨ R) ∧ ¬Q] ∨ [(¬P ∨ R) ∧ R] | distributive law |
+| [(¬P ∨ R) ∧ ¬Q] ∨ R              | absorption law   |
+| [(¬P ∧ ¬Q) ∨ (R ∧ ¬Q)] ∨ R       | distributive law |
+| (¬P ∧ ¬Q) ∨ [(R ∧ ¬Q) ∨ R]       | associative law  |
+| (¬P ∧ ¬Q) ∨ R                    | absorption law   |
+| ¬(P ∨ Q) ∨ R                     | DeMorgan's law   |
+| (P ∨ Q) → R                      | conditional law  |
+
+Therefore (P → R) ∧ (Q → R) is equivalent to (P ∨ Q) → R.
+
+*** 6b
+
+Know that (P → R) ∧ (Q → R) is equivalent to (P ∨ Q) → R.
+
+So formulate that (P -> R) ∨ (Q -> R) is equivalent to (P ∧ Q) → R.
+
+Goal: (P ∧ Q) → R
+
+| Step              | Law used |
+|-------------------+----------|
+| (P → R) ∨ (Q → R) |          |
