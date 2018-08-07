@@ -154,6 +154,72 @@ So formulate that (P -> R) ∨ (Q -> R) is equivalent to (P ∧ Q) → R.
 
 Goal: (P ∧ Q) → R
 
-| Step              | Law used |
-|-------------------+----------|
-| (P → R) ∨ (Q → R) |          |
+| Step                | Law used        |
+|---------------------+-----------------|
+| (P → R) ∨ (Q → R)   |                 |
+| (¬P ∨ R) ∨ (¬Q ∨ R) | conditional law |
+| (¬P ∨ R) ∨ (R ∨ ¬Q) | commutative law |
+| ¬P ∨ (R ∨ R) ∨ ¬Q   | associative law |
+| ¬P ∨ ¬Q ∨ R         | commutative law |
+| ¬(P ∧ Q) ∨ R        | DeMorgan's law  |
+| (P ∧ Q) → R         | conditional law |
+
+Therefore (P → R) ∨ (Q → R) is equivalent to (P ∧ Q) → R.
+
+** Exercise 7
+
+*** 7a
+
+(P → Q) ∧ (Q → R) is equivalent to (P → R) ∧ [(P ↔ Q) ∨ (R ↔ Q)].
+
+Goal: (P → R) ∧ [(P ↔ Q) ∨ (R ↔ Q)]
+
+Start from RHS:
+| Step                                                        | Law used                         |
+|-------------------------------------------------------------+----------------------------------|
+| (P → R) ∧ [(P ↔ Q) ∨ (R ↔ Q)]                             |                                  |
+| (P → R) ∧ [((P → Q) ∧ (Q → P)) ∨ ((R → Q) ∧ (Q → R))]     | biconditional defn.              |
+| (P → R) ∧ [((¬P ∨ Q) ∧ (¬Q ∨ P)) ∨ ((¬R ∨ Q) ∧ (¬Q ∨ R))] | conditional law                  |
+| (P → R) ∧ [((¬P ∧ ¬Q) ∨ (P ∧ Q)) ∨ ((¬R ∧ ¬Q) ∨ (R ∧ Q))] | contradiction law                |
+| (P → R) ∧ [((P ∧ Q) ∨ (R ∧ Q)) ∨ ((¬P ∧ ¬Q) ∨ (¬R ∧ ¬Q))] | associative and commutative laws |
+| (P → R) ∧ [((P ∨ R) ∧ Q) ∨ ((¬P ∨ ¬R) ∧ ¬Q)]              | distributive law                 |
+| (¬P ∨ R) ∧ [((P ∨ R) ∧ Q) ∨ ((¬P ∨ ¬R) ∧ ¬Q)]             | conditional law                  |
+| [(¬P ∨ R) ∧ (P ∨ R) ∧ Q] ∨ [(¬P ∨ R) ∧ (¬P ∨ ¬R) ∧ ¬Q]    | distributive law                 |
+| [(R ∨ (¬P ∧ P)) ∧ Q] ∨ [(¬P ∨ (R ∧ ¬R)) ∧ ¬Q]             | distributive law                 |
+| (R ∧ Q) ∨ (¬P ∧ ¬Q)                                       | contradiction law                |
+| ((R ∧ Q) ∨ ¬P) ∧ ((R ∧ Q) ∨ ¬Q)                           | distributive law                 |
+| ((R ∨ ¬P) ∧ (Q ∨ ¬P)) ∧ ((R ∨ ¬Q) ∧ (Q ∨ ¬Q))             | distributive law                 |
+| ((R ∨ ¬P) ∧ (Q ∨ ¬P)) ∧ (R ∨ ¬Q)                          | tautology law                    |
+| (R ∨ ¬P) ∧ (¬P ∨ Q) ∧ (¬Q ∨ R)                            | commutative and associative laws |
+| (¬P ∨ Q) ∧ (¬Q ∨ R)                                       | can safely remove (R ∨ ¬P) term  |
+| (P → Q) ∧ (Q → R)                                         | conditional law                  |
+
+
+| P | Q | R | (R ∨ ¬P) | (¬P ∨ Q) | (¬Q ∨ R) | (R ∨ ¬P) ∧ (¬P ∨ Q) ∧ (¬Q ∨ R) | (¬P ∨ Q) ∧ (¬Q ∨ R) |
+|---+---+---+----------+----------+----------+--------------------------------+---------------------|
+| F | F | F | T        | T        | T        | T                              | T                   |
+| F | F | T | T        | T        | T        | T                              | T                   |
+| F | T | F | T        | T        | F        | F                              | F                   |
+| F | T | T | T        | T        | T        | T                              | T                   |
+| T | F | F | F        | F        | T        | F                              | F                   |
+| T | F | T | T        | F        | T        | F                              | F                   |
+| T | T | F | F        | T        | F        | F                              | F                   |
+| T | T | T | T        | T        | T        | T                              | T                   |
+
+Truth tables for (R ∨ ¬P) ∧ (¬P ∨ Q) ∧ (¬Q ∨ R) and (¬P ∨ Q) ∧ (¬Q ∨ R) are
+equivalent therefore statements are equivalent.
+
+Therefore (P → Q) ∧ (Q → R) is equivalent to (P → R) ∧ [(P ↔ Q) ∨ (R ↔ Q)].
+
+*** 7b
+
+| Step                 | Law used        |
+|----------------------+-----------------|
+| (P → Q) ∨ (Q → R)    |                 |
+| (¬P ∨ Q) ∨ (¬Q ∨ R)  | conditional law |
+| (¬P ∨ (Q ∨ ¬Q)) ∨ R  | associative law |
+| (¬P ∨ tautology) ∨ R | tautology law   |
+| tautology ∨ R        | tautology law   |
+| tautology            | tautology law   |
+
+Therefore (P → Q) ∨ (Q → R) is a tautology.

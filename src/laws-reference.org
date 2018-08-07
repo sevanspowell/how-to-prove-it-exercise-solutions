@@ -43,3 +43,6 @@
 
 ** Contrapositive law
    P → Q is equivalent to ¬Q → ¬P.
+
+** Biconditional defn. 
+   P ↔ Q is equivalent to (P → Q) ∧ (Q → P)
