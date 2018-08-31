@@ -79,3 +79,135 @@
 - Free variable: w.
 
 ** Exercise 4
+*** 4a
+- For all x, such that x is a man and that man is not married, x is unhappy.
+- If x is a man and unmarried, he is unhappy.
+- All unmarried men are unhappy.
+
+*** 4b
+- There exists some z such that z is a parent of x and z is a sibling of y and y is a woman.
+- There exists some z such that z is a parent, and z has a sister.
+- There is a parent that has a sibling who is a woman.
+
+** Exercise 5
+*** 5a
+- For all x, if x is a prime number and x is not equal to 2, then x is odd.
+- All prime numbers other than 2 are odd.
+
+*** 5b
+- There exists some x such that x is a perfect number and for all y, if y is a
+  perfect number, y is less than or equal to x.
+- There is some perfect number that is greater than or equal to all perfect
+  numbers.
+
+** Exercise 6
+*** 6a
+- ∃x∀yP(x,y)
+- There exists some person such that for all people, that person is their
+  parent.
+- Some person is the parent of all people.
+- False, counter-example: someone cannot be their own parent.
+
+*** 6b
+- ∀x∃yP(x,y)
+- For all people, there exists some person who is their child.
+- All people have atleast one child.
+- Clearly false.
+
+*** 6c
+- ¬∃x∃yP(x,y)
+- ¬(There exists a person that has atleast one child)
+- ¬(true)
+- False.
+
+*** 6d
+- ∃x¬∃yP(x,y)
+- There exists some person such that (¬∃yP(x,y)).
+- There exists some person that does not have a child.
+- Clearly true.
+
+*** 6e
+- ∃x∃y¬P(x,y)
+- There exists some person such that ∃y¬P(x,y).
+- There exists some person such that they are not the parent of someone.
+- There exists some person that does not have children.
+- Clearly true.
+
+** Exercise 7
+- U = ℕ {0, 1, 2, ...}
+ 
+*** 7a
+- ∀x∃y(2x - y = 0)
+- For all numbers, there exists a number y such that 2x - y = 0.
+- For all numbers, there exists a number y such that y = 2x.
+- For all numbers, there exists a number that is double that number.
+- True.
+
+*** 7b
+- ∃y∀x(2x - y = 0)
+- There exists some y such that for all x, 2x - y = 0
+- There exists some y such that for all x, x = y/2
+- False.
+
+*** 7c
+- ∀x∃y(x - 2y = 0)
+- For all x, there exists some y such that y = x/2.
+- False, counter-example: x = 3.
+
+*** 7d
+- ∀x(x < 10 → ∀y(y < x → y < 9))
+- For all x < 10: for all y < x: y < 9
+- True
+
+*** 7e
+- ∃y∃z(y + z = 100)
+- There exists some y and z such that y + z = 100.
+- True, y = z = 50.
+
+*** 7f
+- ∀x∃y(y > x ∧ ∃z(y + z = 100))
+- For all x, there exists some y such that y > x and there exists some z such
+  that y + z = 100.
+- False, counter-example y = 101.
+
+** Exercise 8
+- U = ℝ {positive, negative, fractions, etc.}
+
+*** 8a
+- True.
+ 
+*** 8b
+- False.
+
+*** 8c
+- True.
+
+*** 8d
+- False, counter-example: y = 9.9.
+
+*** 8e
+- True.
+
+*** 8f
+- True.
+
+** Exercise 9
+- U = ℤ {positive and negative whole numbers}
+
+*** 9a
+- True.
+
+*** 9b
+- False.
+
+*** 9c
+- False, counter-example: 3.
+
+*** 9d
+- True.
+
+*** 9e 
+- True.
+
+*** 9f
+- True.
