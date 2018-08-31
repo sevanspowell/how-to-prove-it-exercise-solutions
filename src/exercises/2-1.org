@@ -1,0 +1,81 @@
+* Chapter 2.1 Exercise Solutions
+
+** Exercise 1
+*** 1a
+- Let F(x,y) stand for "x has forgiven y."
+- Let S(x) stand for "x is a saint."
+- ∀x∃y(F(x,y) → S(x))
+
+*** 1b
+- Let S(x,y) stand for "x is smarter than y."
+- Let C(x) stand for "x is in the calculus class."
+- Let D(x) stand for "x is in the discrete class."
+- ¬∃x[C(x) ∧ ∀y(D(y) → S(x,y)) ]
+
+*** 1c
+- Let L(x,y) stand for "x likes y."
+- Let m stand for Mary.
+- ∀x(¬(x = m) → L(x,m))
+
+*** 1d
+- Let S(x,y) stand for "x saw y."
+- Let P(x) stand for "x is a police officer."
+- Let j stand for Jane.
+- Let r stand for Roger.
+- ∃x(P(x) ∧ S(j,x)) ∧ ∃y(P(y) ∧ S(r,y))
+
+*** 1e
+- ∃x(P(x) ∧ S(j,x) ∧ S(r,x)), where letters have same meaning as above.
+
+** Exercise 2
+*** 2a
+- Let C(x) stand for "x bought a Rolls Royce with cash."
+- Let R(x) stand for "x is rich."
+- Let U(y,x) stand for "y is an uncle of x."
+- ∀x(x bought Rolls Royce with cash → x has a rich uncle)
+- ∀x(C(x) → ∃y(U(y,x) ∧ R(y)))
+
+*** 2b
+- Let D(x) stand for "x is in the dorm."
+- Let M(x) stand for "x has the measles."
+- Let F(y,x) stand for "y is a friend of x."
+- Let Q(x) stand for "x will have to be quarantined."
+- ∃x[(D(x) ∧ M(x)) → ∀y(∃z(F(y,z) ∧ D(z)) → Q(y))]
+
+*** 2c
+- Let F(x) stand for "x failed the test."
+- Let T(x,y) stand for "x will tutor y."
+- Let A(x) stand for "x got an A."
+- Let D(x) stand for "x got a D."
+- (nobody failed the test) → (everyone who got an A will tutor everyone who got a D)
+- (¬∃xF(x)) → ∀y(A(y) → ∃z(D(z) ∧ T(y,z)))
+
+*** 2d
+- Let D(x) stand for "x can do it."
+- Let j stand for "Jones."
+- (there exists a person who can do it) → (Jones can do it)
+- ∃xD(x) → D(j)
+
+*** 2d
+- (Jones can do it) → (everyone can do it)
+- D(j) → ∀xD(x)
+
+** Exercise 3
+*** 3a
+- ∀a((a > x) → (a > y))
+- Free variables: x and y
+
+*** 3b
+- ∀a((ax^2 + 4x - 2 = 0)
+- ∀a((a ≥ -2) ↔ ∃b(a*(b^2) + 4*b - 2 = 0))
+- No free variables.
+
+*** 3c
+- ∀x((x^3 - 3x < 3) → (x < 10))
+- No free variables.
+
+*** 3d
+- (∃x(x^2 + 5x = w) ∧ ∃y(4 - y^2 = w)) → (w > -10 ∧ w < 10)
+- Free variable: w.
+
+** Exercise 4

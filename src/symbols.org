@@ -1,0 +1,19 @@
+| Symbol | Name                     |
+|--------+--------------------------|
+| ∀      | Universal quantifier     |
+| ∃      | Existential quantifier   |
+| ∅      | Empty set                |
+| →      | Logical implication      |
+| ℝ      | Real numbers             |
+| ¬      | Logical negation         |
+| ∧      | Logical and              |
+| ∨      | Logical or               |
+| ⊆      | Subset of                |
+| ∈      | Element of               |
+| ∩      | Intersection             |
+| ∪      | Union                    |
+| ∖      | Difference               |
+| ∉      | Not an element of        |
+| ℕ      | Natural numbers          |
+| ≥      | Greater than or equal to |
+| ↔      | Logical equivalence      |
