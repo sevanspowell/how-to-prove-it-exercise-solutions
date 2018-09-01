@@ -46,3 +46,10 @@
 
 ** Biconditional defn. 
    P ↔ Q is equivalent to (P → Q) ∧ (Q → P)
+
+** Quantifier Negation laws
+   ¬∃xP(x) is equivalent to ∀x¬P(x)
+   ¬∀xP(x) is equivalent to ∃x¬P(x)
+
+** Uniqueness abbreviation
+   ∃!xP(x) is equivalent to ∃x(P(x) ∧ ¬∃y(P(y) ∧ y ≠ x))

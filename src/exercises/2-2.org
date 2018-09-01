@@ -1,0 +1,59 @@
+* Chapter 2.2 Exercise Solutions
+
+** Exercise 1
+*** 1a
+- "Everyone who is majoring in math has a friend who needs help with their
+homework."
+- Let M(x) stand for "x is majoring in math."
+- Let F(x,y) stand for "y is a friend of x."
+- Let H(x) stand for "x needs help with their homework."
+- ∀x(M(x) → ∃y(F(x,y) ∧ H(y)))
+- ¬∀x(M(x) → ∃y(F(x,y) ∧ H(y))) [negate]
+- ∃x¬(M(x) → ∃y(F(x,y) ∧ H(y))) [quantifier negation law]
+- ∃x¬(¬M(x) ∨ ∃y(F(x,y) ∧ H(y))) [conditional law]
+- ∃x(¬¬M(x) ∧ ¬∃y(F(x,y) ∧ H(y))) [DeMorgan's law]
+- ∃x(M(x) ∧ ¬∃y(F(x,y) ∧ H(y))) [double negation law]
+- ∃x(M(x) ∧ ∀y¬(F(x,y) ∧ H(y))) [quantifier negation law]
+- ∃x(M(x) ∧ ∀y(¬F(x,y) ∨ ¬H(y))) [DeMorgan's law]
+- ∃x(M(x) ∧ ∀y(F(x,y) → ¬H(y))) [conditional law]
+- "There exists someone who is majoring in maths and all of their friends don't
+  need help with their homework."
+- "There is someone majoring in math who has no friends that need help with
+  their homework."
+
+*** 1b
+- "Everyone has a roommate who dislikes everyone."
+- Let R(x,y) stand for "y is a roommate of x."
+- Let L(x,y) stand for "x likes y."
+- ∀x∃y(R(x,y) ∧ (y dislikes everyone))
+- ∀x∃y(R(x,y) ∧ ∀z(¬L(y,z)))
+- ¬∀x∃y(R(x,y) ∧ ∀z(¬L(y,z))) [negate]
+- ∃x¬∃y(R(x,y) ∧ ∀z(¬L(y,z))) [quantifier negation law]
+- ∃x∀y¬(R(x,y) ∧ ∀z(¬L(y,z))) [quantifier negation law]
+- ∃x∀y(¬R(x,y) ∨ ¬∀z(¬L(y,z))) [DeMorgan's law]
+- ∃x∀y(R(x,y) → ¬∀z(¬L(y,z))) [conditional law]
+- ∃x∀y(R(x,y) → ∃z¬(¬L(y,z))) [quantifier negation law]
+- ∃x∀y(R(x,y) → ∃z(L(y,z))) [double negation law]
+- There exists some person such that all their roommates like at least one
+  person.
+
+*** 1c
+- ∀x((x ∈ A ∪ B) → (x ∈ C ∖ D))
+- ∀x((x ∈ A ∨ x ∈ B) → (x ∈ C ∧ x ∉ D))
+- ¬∀x((x ∈ A ∨ x ∈ B) → (x ∈ C ∧ x ∉ D)) [negate]
+- ∃x¬((x ∈ A ∨ x ∈ B) → (x ∈ C ∧ x ∉ D)) [quantifier negation law]
+- ∃x¬(¬(x ∈ A ∨ x ∈ B) ∨ (x ∈ C ∧ x ∉ D)) [conditional law]
+- ∃x(¬¬(x ∈ A ∨ x ∈ B) ∧ ¬(x ∈ C ∧ x ∉ D)) [DeMorgan's law]
+- ∃x((x ∈ A ∨ x ∈ B) ∧ ¬(x ∈ C ∧ x ∉ D)) [double negation law]
+- ∃x((x ∈ A ∨ x ∈ B) ∧ (x ∉ C ∨ x ∈ D)) [DeMorgan's law]
+
+*** 1d
+- ∃x∀y[y > x → ∃z(z^2 + 5z = y)]
+- ¬∃x∀y[y > x → ∃z(z^2 + 5z = y)] [negate]
+- ∀x¬∀y[y > x → ∃z(z^2 + 5z = y)] [quantifier negation law]
+- ∀x∃y¬[y > x → ∃z(z^2 + 5z = y)] [quantifier negation law]
+- ∀x∃y¬[¬(y > x) ∨ ∃z(z^2 + 5z = y)] [conditional law]
+- ∀x∃y[¬¬(y > x) ∧ ¬∃z(z^2 + 5z = y)] [DeMorgan's law]
+- ∀x∃y[¬¬(y > x) ∧ ∀z¬(z^2 + 5z = y)] [quantifier negation law]
+- ∀x∃y[(y > x) ∧ ∀z¬(z^2 + 5z = y)] [double negation law]
+- ∀x∃y[(y > x) ∧ ∀z(z^2 + 5z ≠ y)]

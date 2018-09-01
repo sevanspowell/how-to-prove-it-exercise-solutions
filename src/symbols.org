@@ -17,4 +17,5 @@
 | ℕ      | Natural numbers          |
 | ≥      | Greater than or equal to |
 | ↔      | Logical equivalence      |
-| ℤ      | Integers                |
+| ℤ      | Integers                 |
+| ≠      | Not equal                |
