@@ -57,3 +57,100 @@ homework."
 - ∀x∃y[¬¬(y > x) ∧ ∀z¬(z^2 + 5z = y)] [quantifier negation law]
 - ∀x∃y[(y > x) ∧ ∀z¬(z^2 + 5z = y)] [double negation law]
 - ∀x∃y[(y > x) ∧ ∀z(z^2 + 5z ≠ y)]
+
+** Exercise 2
+*** 2a
+- "There is someone in the freshman class who doesn't have a roommate."
+- Let F(x) stand for "x is in the freshman class."
+- Let R(x,y) stand for "y is a roommate of x."
+- ∃x(F(x) ∧ ¬∃yR(x,y))
+- ¬∃x(F(x) ∧ ¬∃yR(x,y))  [negate]
+- ∀x¬(F(x) ∧ ¬∃yR(x,y))  [quantifier negation law]
+- ∀x(¬F(x) ∨ ¬¬∃yR(x,y)) [DeMorgan's law]
+- ∀x(¬F(x) ∨ ∃yR(x,y))   [double negation law]
+- ∀x(F(x) → ∃yR(x,y))    [conditional aw1]
+- "If someone is a freshman, they have atleast one roommate."
+- "Everyone who is a freshman has at least one roommate."
+
+*** 2b
+- "Everyone likes someone, but no-one likes everyone."
+- Let L(x,y) stand for "x likes y."
+- ∀x∃yL(x,y) ∧ ¬∃a∀bL(a,b)
+- ¬(∀x∃yL(x,y) ∧ ¬∃a∀bL(a,b))  [negate]
+- (¬∀x∃yL(x,y) ∨ ¬¬∃a∀bL(a,b)) [DeMorgan's law]
+- (¬∀x∃yL(x,y) ∨ ∃a∀bL(a,b))   [double negation law]
+- ∀x∃yL(x,y) → ∃a∀bL(a,b)      [conditional law]
+- "If everyone likes someone, then there exists some person who likes everyone."
+
+*** 2c
+- ∀a ∈ A∃b ∈ B(a ∈ C ↔ b ∈ C)
+- ¬∀a ∈ A∃b ∈ B(a ∈ C ↔ b ∈ C) [negate]
+- ∃a ∈ A¬∃b ∈ B(a ∈ C ↔ b ∈ C) [quantifier negation law]
+- ∃a ∈ A∀b ∈ B¬(a ∈ C ↔ b ∈ C) [quantifier negation law]
+
+*** 2d
+- ∀y > 0∃x(ax^2 + bx + c = y)
+- ∃y > 0∀x(ax^2 + bx + c ≠ y)
+
+** Exercise 3
+*** 3a
+- ∀x(x < 7 → ∃a∃b∃c(a^2 + b^2 + c^2 = x))
+- x = 0, a = 0, b = 0, c = 0
+- x = 1, a = 0, b = 0, c = 1
+- x = 2, a = 0, b = 1, c = 1
+- x = 3, a = 1, b = 1, c = 1
+- x = 4, a = 0, b = 0, c = 2
+- x = 5, a = 0, b = 1, c = 2
+- x = 6, a = 1, b = 1, c = 2
+Statement is true.
+
+*** 3b
+- ∃!x((x - 4)^2 = 9)
+- (x - 4)^2 = 9
+- (x - 4) = ±√9
+- (x - 4) = ±(3)
+- x = 1, x = 7
+- Two solutions in universe of discourse, therefore statement is false.
+
+*** 3c
+- ∃!x((x - 4)^2 = 25)
+- (x - 4)^2 = 25
+- (x - 4) = ±5
+- x = -1, x = 9
+- Only one solution in the universe of discourse, therefore statement is true.
+
+*** 3d
+- ∃x∃y((x - 4)^2 = 25 ∧ (y - 4)^2 = 25)
+- True: x = 9, y = 9.
+
+** Exercise 4
+- ¬∃xP(x) is equivalent to ∀x¬P(x)   [first quantifier negation law]
+- Let P(x) = ¬P(x)
+- ¬∃x¬P(x) is equivalent to ∀x¬¬P(x)
+- ¬∃x¬P(x) is equivalent to ∀xP(x)   [double negation law]
+- ¬¬∃x¬P(x) is equivalent to ¬∀xP(x) [negate both]
+- ∃x¬P(x) is equivalent to ¬∀xP(x)   [double negation law]
+- ¬∀xP(x) is equivalent to ∃x¬P(x)   [second quantifier negation law]
+
+** Exercise 5
+- ¬∃x ∈ AP(x) is equivalent to ∀x ∈ A¬P(x)
+- ¬∃x ∈ AP(x)
+- ¬∃x(x ∈ A ∧ P(x))    [expanding abbreviation]
+- ∀x¬(x ∈ A ∧ P(x))    [quantifier negation law]
+- ∀x(¬(x ∈ A) ∨ ¬P(x)) [DeMorgan's law]
+- ∀x(x ∈ A → ¬P(x))    [conditional law]
+- ∀x ∈ A(¬P(x))        [expanding abbreviation]
+
+** Exercise 6
+- Show that the existential quantifier distributes over disjunction:
+- ∃x(P(x) ∨ Q(x)) is equivalent to ∃xP(x) ∨ ∃xQ(x)
+
+- ¬¬∃x(P(x) ∨ Q(x)) [double negation law]
+- ¬∀x¬(P(x) ∨ Q(x)) [quantifier negation law]
+- ¬∀x(¬P(x) ∧ ¬Q(x)) [DeMorgan's law]
+- ¬(∀x¬P(x) ∧ ∀x¬Q(x)) [Universal quantifier distributes over conjunction]
+- ¬∀x¬P(x) ∨ ¬∀x¬Q(x) [DeMorgan's law]
+- ∃x¬¬P(x) ∨ ∃x¬¬Q(x) [quantifier negation law]
+- ∃xP(x) ∨ ∃xQ(x) [double negation law]
+
+Therefore ∃x(P(x) ∨ Q(x)) is equivalent to ∃xP(x) ∨ ∃xQ(x).
