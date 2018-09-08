@@ -54,6 +54,6 @@
 ** Uniqueness abbreviation
    ∃!xP(x) is equivalent to ∃x(P(x) ∧ ¬∃y(P(y) ∧ y ≠ x))
 
-** Expanding abbreaviation
+** Expanding abbreviation
    ∃x ∈ AP(x) is equivalent to ∃x(x ∈ A ∧ P(x))
    ∀x ∈ AP(x) is equivalent to ∀x(x ∈ A → P(x))
