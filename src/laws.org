@@ -57,3 +57,7 @@
 ** Expanding abbreviation
    ∃x ∈ AP(x) is equivalent to ∃x(x ∈ A ∧ P(x))
    ∀x ∈ AP(x) is equivalent to ∀x(x ∈ A → P(x))
+
+** Quantifier distribution
+  ∀xP(x) ∧ ∀xQ(x) is equivalent to ∀x(P(x) ∧ Q(x))
+  ∃xP(x) ∨ ∃xQ(x) is equivalent to ∃x(P(x) ∨ Q(x))

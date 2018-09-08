@@ -169,7 +169,7 @@ Show that (∀x ∈ AP(x)) ∧ (∀x ∈ BP(x)) is equivalent to ∀x ∈ (A ∪
 
 (∀x ∈ AP(x)) ∧ (∀x ∈ BP(x))
 ∀x(x ∈ A → P(x)) ∧ ∀x(x ∈ B → P(x)) [expanding abbreviation]
-∀x((x ∈ A → P(x)) ∧ (x ∈ B → P(x))) [universal quantifier distributes over conjunction.]
+∀x((x ∈ A → P(x)) ∧ (x ∈ B → P(x))) [universal quantifier distributes over conjunction]
 ∀x((x ∉ A ∨ P(x)) ∧ (x ∉ B ∨ P(x))) [conditional law]
 ∀x((x ∉ A ∧ x ∉ B) ∨ P(x))          [distributive law]
 ∀x(¬(x ∈ A ∨ x ∈ B) ∨ P(x))         [DeMorgan's law]
@@ -177,3 +177,94 @@ Show that (∀x ∈ AP(x)) ∧ (∀x ∈ BP(x)) is equivalent to ∀x ∈ (A ∪
 ∀x((x ∈ A ∪ B) → P(x))              [defn. of union]
 ∀x ∈ (A ∪ B)P(x)                    [abbreviation]
 
+** Exercise 9
+
+Is ∀x(P(x) ∨ Q(x)) equivalent to ∀xP(x) ∨ ∀xQ(x).
+
+Let P(x) stand for "x has short hair."
+Let Q(x) stand for "x is a girl."
+Let the universe of discourse be all people.
+
+∀x(P(x) ∨ Q(x)) stands for "all people either have short hair or are girls."
+∀xP(x) ∨ ∀xQ(x) stands for "either all people have short hair or all people are
+girls."
+Clearly, ∀x(P(x) ∨ Q(x)) and ∀xP(x) ∨ ∀xQ(x) are not equivalent expressions.
+
+** Exercise 10
+*** 10a
+Show that ∃x ∈ A P(x) ∨ ∃x ∈ B P(x) is equivalent to ∃x ∈ (A ∪ B) P(x).
+
+∃x ∈ A P(x) ∨ ∃x ∈ B P(x)
+∃x(x ∈ A ∧ P(x)) ∨ ∃x(x ∈ B ∧ P(x)) [expanding abbreviation]
+∃x((x ∈ A ∧ P(x)) ∨ (x ∈ B ∧ P(x))) [existential quantifier distributes over disjunction]
+∃x((x ∈ A ∨ x ∈ B) ∧ P(x))          [distributive law]
+∃x((x ∈ A ∪ B) ∧ P(x))              [definition of union]
+∃x ∈ (A ∪ B) P(x)                   [abbreviation]
+
+*** 10b
+
+Is ∃x ∈ A P(x) ∧ ∃x ∈ B P(x) equivalent to ∃x ∈ (A ∩ B) P(x)?
+
+Let A stand for the set of all apples.
+Let B stand for the set of all bananas.
+Let P(x) stand for "x is green."
+
+The first statement says "There exists an apple which is green and there exists
+a banana which is green." This statement is true, provided there does exist some
+banana which is unripe (green) and there does exist some granny smith apple.
+
+The second statement says there exists something in the set of things which are
+apples AND bananas which is green. Now the set of things which are both apples
+and bananas is the empty set, therefore this statement is always false.
+
+As is illustrated, these statements are not equivalent.
+
+** Exercise 11
+
+Show that the statements A ⊆ B and A \ B = ∅ are equivalent.
+
+A ⊆ B is written using logical symbols as: ∀x(x ∈ A → x ∈ B).
+A \ B = ∅ is written using logical symbols as: ¬∃x(x ∈ A ∧ x ∉ B).
+
+Taking ∀x(x ∈ A → x ∈ B):
+∀x(x ∈ A → x ∈ B)
+∀x(¬(x ∈ A) ∨ x ∈ B) [conditional law]
+∀x¬(x ∈ A ∧ x ∉ B) [DeMorgan's law]
+¬∃x(x ∈ A ∧ x ∉ B) [quantifier negation law]
+
+∀x(x ∈ A → x ∈ B) and ¬∃x(x ∈ A ∧ x ∉ B) are shown to be equivalent, therefore 
+A ⊆ B and A \ B = ∅ are equivalent.
+
+** Exercise 12
+
+T(x,y) means that "x is a teacher of y."
+
+*** 12a
+"x only teaches one student."
+True when a given teacher only has a single student.
+
+*** 12b
+"There is a teacher that teaches only one student."
+True whenever there exists a teacher (or more than one teacher) that teaches
+only one student.
+
+*** 12c
+"There is only one teacher who teaches students."
+True whenever there is exists only one teacher who teaches one or more students.
+
+*** 12d
+"There exists a student who has only one teacher."
+True whenever there is exists only one teacher who teaches one or more students.
+
+*** 12e
+"There is only one teacher who teaches only one student."
+True whenever there is only one student who is taught by the only teacher.
+
+*** 12f
+"There exists a student and a teacher and there does not exist another teacher
+or another student."
+True whenever there is only one student who is taught by the only teacher.
+
+*** Misc
+c and d are equivalent.
+e and f are equivalent.
