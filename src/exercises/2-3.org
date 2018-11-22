@@ -1,0 +1,298 @@
+* Chapter 2.3 Exercise Solutions
+
+** Exercise 1
+- Analyze the logical forms of the following statements.
+
+*** 1a
+F ⊆ 𝒫(A)
+F ⊆ {x \vert x ⊆ A }
+∀x(x ∈ F → {x \vert x ⊆ A })
+∀x(x ∈ F → ∀y(y ∈ x → y ∈ A))
+
+*** 1b
+A ⊆ {2n + 1 | n ∈ ℕ}
+∀x(x ∈ A → x ∈ {2n + 1 | n ∈ ℕ})
+∀x(x ∈ A → ∃n ∈ ℕ(x = 2n + 1))
+
+*** 1c
+{n^2 + n + 1 | n ∈ ℕ} ⊆ {2n + 1 | n ∈ ℕ}
+
+∀x(x ∈ {n^2 + n + 1 | n ∈ ℕ} → x ∈ {2n + 1 | n ∈ ℕ})
+∀x(∃n ∈ ℕ(x = n^2 + n + 1) → ∃m ∈ ℕ(x = 2m + 1))
+∀n ∈ ℕ∃m ∈ ℕ(n^2 + n + 1 = 2m + 1)
+
+*** 1d
+𝒫(∪_{i∈I}A_i) ⊄ ∪_{i∈I}𝒫(A_i)
+∃x(x ∈ 𝒫(∪_{i∈I}A_i) ∧ x ∉ ∪_{i∈I}𝒫(A_i))
+
+x ∈ 𝒫(∪_{i∈I}A_i):
+∀y(y ∈ x → y ∈ ∪_{i∈I}A_i)
+∀y(y ∈ x → y ∈ {t \vert ∃i ∈ I(t ∈ A_i)})
+∀y(y ∈ x → ∃i ∈ I(y ∈ A_i))
+
+x ∉ ∪_{i∈I}𝒫(A_i):
+x ∉ {t | ∃i ∈ I(t ∈ 𝒫(A_i))}
+∃i ∈ I(x ∉ 𝒫(A_i))
+∃i ∈ I(x ∉ {z | z ⊆ A_i })
+∃i ∈ I(x ⊄ A_i)
+∃i ∈ I∃y(y ∈ x ∧ y ∉ A_i)
+
+∃x(x ∈ 𝒫(∪_{i∈I}A_i) ∧ x ∉ ∪_{i∈I}𝒫(A_i))
+∃x(∀y(y ∈ x → ∃i ∈ I(y ∈ A_i)) ∧ ∃i ∈ I∃y(y ∈ x ∧ y ∉ A_i))
+
+** Exercise 2
+*** 2a
+x ∈ ∪F \ ∪G
+x ∈ ∪F ∧ x ∉ ∪G
+∃A ∈ F(x ∈ A) ∧ ¬∃A ∈ G(x ∈ A)
+∃A ∈ F(x ∈ A) ∧ ∀A ∈ G(x ∉ A)
+
+*** 2b
+{x ∈ B | x ∉ C} ∈ 𝒫(A)
+{x ∈ B | x ∉ C} ∈ {x \vert x ⊆ A }
+{x ∈ B | x ∉ C} ⊆ A
+∀y(y ∈ {x ∈ B | x ∉ C} → y ∈ A)
+∀y({y ∈ B | y ∉ C} → y ∈ A)
+∀y(y ∈ B ∧ y ∉ C → y ∈ A)
+
+*** 2c
+x ∈ ∩_{i∈I}(A_i ∪ B_i)
+x ∈ {x \vert ∀i ∈ I(x ∈ (A_i ∪ B_i))}
+∀i ∈ I(x ∈ (A_i ∪ B_i))
+∀i ∈ I(x ∈ A_i ∨ x ∈ B_i)
+
+*** 2d
+x ∈ (∩_{i∈I}A_i) ∪ (∩_{i∈I}B_i)
+(∀i ∈ I(x ∈ A_i)) ∨ (∀i ∈ I(x ∈ B_i))
+
+** Exercise 3
+𝒫({∅}) = {∅, {∅}}
+∅ is a subset of the set (it is of all sets).
+{∅} is the subset containing the one element of the set.
+
+** Exercise 4
+∩F = {red, blue}
+∪F = {red, green, blue, orange, purple}
+
+** Exercise 5
+∩F = ∅
+∪F = {3, 7, 12, 5, 16, 23}
+
+** Exercise 6
+*** 6a
+A_2 = {2,3,1,4}
+A_3 = {3,4,2,6}
+A_4 = {4,5,3,8}
+A_5 = {5,6,4,10}
+
+*** 6b
+∩_{i∈I}A_i = {4}
+∪_{i∈I}A_i = {1,2,3,4,5,6,8,10}
+
+** Exercise 7
+Ugh, really?
+
+** Exercise 8
+*** 8a
+A_2 = {2,4}
+A_3 = {3,6}
+
+B_2 = {2,3}
+B_3 = {3,4}
+
+*** 8b
+∩_{i∈I}(A_i ∪ B_i) = ∩{2,3,4}{3,4,6}
+            = {3,4}
+
+(∩_{i∈I}A_i) ∪ (∩_{i∈I}B_i) = {} ∪ {3}
+                 = {3}
+
+They are not the same.
+
+*** 8c
+From our answer in 8b, we can conclude that x ∈ ∩_{i∈I}(A_i ∪ B_i) and x ∈ (∩_{i∈I}A_i) ∪
+(∩_{i∈I}B_i) are *not* equivalent statements.
+
+** Exercise 9
+I = {2, 3}
+A_i = {i,2i}
+B_i = {i,i+1}
+
+A_2 = {2,4}
+A_3 = {3,6}
+B_2 = {2,3}
+B_3 = {3,4}
+
+∪_{i∈I}(A_i ∩ B_i)      = ∪{2}{3}             = {2,3}
+(∪_{i∈I}A_i) ∩ (∪_{i∈I}B_i) = {2,3,4,6} ∩ {2,3,4} = {2,3,4}
+
+** Exercise 10
+
+x ∈ 𝒫(A ∩ B)
+x ∈ {x \vert x ⊆ A ∩ B }
+x ⊆ A ∩ B
+∀y(y ∈ x → y ∈ A ∩ B)
+∀y(y ∈ x → y ∈ A ∧ y ∈ B)
+∀y(y ∉ x ∨ (y ∈ A ∧ y ∈ B)) [conditional law]
+∀y((y ∉ x ∨ y ∈ A) ∧ (y ∉ x ∨ y ∈ B)) [distributive law]
+∀y((y ∈ x → y ∈ A) ∧ (y ∈ x → y ∈ B)) [conditional law]
+
+x ∈ 𝒫(A) ∩ 𝒫(B)
+x ∈ {x \vert x ⊆ A } ∩ {x \vert x ⊆ B }
+x ⊆ A ∧ x ⊆ B
+∀y(y ∈ x → y ∈ A) ∧ ∀y(y ∈ x → y ∈ B)
+∀y((y ∈ x → y ∈ A) ∧ (y ∈ x → y ∈ B)), which is equivalent to above.
+
+** Exercise 11
+
+A = {1,2}
+B = {2,3}
+
+𝒫(A ∪ B)    = 𝒫({1,2,3})
+            = {∅, {1}, {2}, {3}, {1,2}, {1,3}, {2,3}}
+
+𝒫(A) ∪ 𝒫(B) = {∅, {1}, {2}, {1,2}} ∪ {∅, {2}, {3}, {2,3}}
+            = {∅, {1}, {2}, {3}, {1,2}, {2,3}}
+
+** Exercise 12
+*** 12a
+∪_{i∈I}(A_i ∪ B_i):
+x ∈ ∪_{i∈I}(A_i ∪ B_i)
+x ∈ {x \vert ∃i ∈ I(x ∈ (A_i ∪ B_i))}
+∃i ∈ I(x ∈ (A_i ∪ B_i))
+∃i ∈ I(x ∈ A_i ∨ x ∈ B_i)
+
+(∪_{i∈I}A_i) ∪ (∪_{i∈I}B_i):
+x ∈ (∪_{i∈I}A_i) ∪ (∪_{i∈I}B_i)
+x ∈ (∪_{i∈I}A_i) ∨ x ∈ (∪_{i∈I}B_i)
+x ∈ {x \vert ∃i ∈ I(x ∈ A_i)} ∨ x ∈ {x \vert ∃i ∈ I(x ∈ B_i)}
+∃i ∈ I(x ∈ A_i) ∨ ∃i ∈ I(x ∈ B_i)
+∃i ∈ I(x ∈ A_i ∨ x ∈ B_i)
+
+Therefore ∪_{i∈I}(A_i ∪ B_i) = (∪_{i∈I}A_i) ∪ (∪_{i∈I}B_i).
+
+*** 12b
+(∩F)∩(∩G) = ∩(F ∪ G)
+
+(∩F)∩(∩G):
+x ∈ (∩F)∩(∩G)
+(x ∈ ∩F) ∧ (x ∈ ∩G)
+x ∈ {x \vert ∀A ∈ F(x ∈ A)} ∧ x ∈ {x \vert ∀A ∈ G(x ∈ A)}
+∀A ∈ F(x ∈ A) ∧ ∀A ∈ G(x ∈ A)
+
+∩(F ∪ G):
+x ∈ {x \vert ∀A ∈ (F ∪ G)(x ∈ A)}
+∀A ∈ (F ∪ G)(x ∈ A)
+∀A(A ∈ (F ∪ G) → x ∈ A)
+∀A((A ∈ F ∨ A ∈ G) → x ∈ A)
+∀A(¬(A ∈ F ∨ A ∈ G) ∨ x ∈ A)           [conditional law]
+∀A((A ∉ F ∧ A ∉ G) ∨ x ∈ A)            [DeMorgan's law]
+∀A((A ∉ F ∨ x ∈ A) ∧ (A ∉ G ∨ x ∈ A))  [distributive law]
+∀A((A ∈ F → x ∈ A) ∧ (A ∈ G → x ∈ A))  [conditional law]
+∀A(A ∈ F → x ∈ A) ∧ ∀A(A ∈ G → x ∈ A)  [∀ distributes over ∧]
+∀A ∈ F(x ∈ A) ∧ ∀A ∈ G(x ∈ A)
+
+Therefore (∩F)∩(∩G) = ∩(F ∪ G).
+
+*** 12c
+∩_{i∈I}(A_i \ B_i) = ∩_{i∈I}A_i \ ∪_{i∈I}B_i
+
+∩_{i∈I}(A_i \ B_i):
+x ∈ {x \vert ∀i ∈ I(x ∈ (A_i \ B_i))}
+∀i ∈ I(x ∈ (A_i \ B_i))
+∀i ∈ I(x ∈ A_i ∧ x ∉ B_i) [defn. of set difference]
+
+∩_{i∈I}A_i \ ∪_{i∈I}B_i:
+x ∈ ∩_{i∈I}A_i \ ∪_{i∈I}B_i
+x ∈ ∩_{i∈I}A_i ∧ x ∉ ∪_{i∈I}B_i [defn. of set difference]
+x ∈ {x \vert ∀i ∈ I(x ∈ A_i)} ∧ x ∉ {x \vert ∃i ∈ I(x ∈ B_i)}
+∀i ∈ I(x ∈ A_i) ∧ ¬(∃i ∈ I(x ∈ B_i))
+∀i ∈ I(x ∈ A_i) ∧ ∀i ∈ I(x ∉ B_i) [quantifier negation law]
+∀i ∈ I(x ∈ A_i ∧ x ∉ B_i)
+
+** Exercise 13
+I = {1,2}
+J = {3,4}
+A_{i,j} = {i,j,i+j}
+
+*** 13a
+For each j ∈ J, let B_j = ∪_{i∈I}A_i,j = A_1,j ∪ A_2,j. Find B_3 and B_4.
+B_3 = A_1,3 ∪ A_2,3
+   = {1,3,4} ∪ {2,3,5}
+   = {1,2,3,4,5}
+
+B_4 = A_1,4 ∪ A_2,4
+   = {1,4,5} ∪ {2,4,6}
+   = {1,2,4,5,6}
+
+*** 13b
+∩_{j∈J}B_j = ∩_{j∈J}(∪_{i∈I}A_{i,j})
+∩_{j∈J}(∪_{i∈I}A_{i,j})
+∩_{j∈J}(A_{1,j} ∪ A_{2,j})
+((A_{1,3} ∪ A_{2,3}) ∩ (A_{1,4} ∪ A_{2,4}))
+(({1,3,4} ∪ {2,3,5}) ∩ ({1,4,5} ∪ {2,4,6}))
+{1,2,3,4,5} ∩ {1,2,4,5,6}
+{1,2,4,5}
+
+*** 13c
+∪_{i∈I}_{}_{}(∩_{j∈J}_{}A_{i,j})
+∪_{i∈I}_{}_{}(A_{i,3} ∩ A_{i,4})
+(A_{1,3} ∩ A_{1,4}) ∪ (A_{2,3} ∩ A_{2,4})
+({1,3,4} ∩ {1,4,5}) ∪ ({2,3,5} ∩ {2,4,6})
+{1,4} ∪ {2}
+{1,2,4}
+
+∪_{i∈I}_{}_{}(∩_{j∈J}_{}A_{i,j}) and ∩_{j∈J}(∪_{i∈I}A_{i,j}) are not equal.
+
+*** 13d
+∪_{i∈I}_{}_{}(∩_{j∈J}_{}A_{i,j}):
+x ∈ ∪_{i∈I}_{}_{}(∩_{j∈J}_{}A_{i,j})
+x ∈ {x \vert ∃i ∈ I(x ∈ (∩_{j∈J}_{}A_{i,j}))}
+∃i ∈ I(x ∈ (∩_{j∈J}_{}A_{i,j}))
+∃i ∈ I(x ∈ ({x \vert ∀j ∈ J(x ∈ A_{i,j})}))
+∃i ∈ I(∀j ∈ J(x ∈ A_{i,j}))
+
+
+∩_{j∈J}(∪_{i∈I}A_{i,j}):
+x ∈ ∩_{j∈J}(∪_{i∈I}A_{i,j})
+x ∈ {x \vert ∀j ∈ J(x ∈ (∪_{i∈I}A_{i,j}))}
+∀j ∈ J(x ∈ (∪_{i∈I}A_{i,j}))
+∀j ∈ J(∃i ∈ I(x ∈ A_{i,j}))
+
+They are not equivalent.
+
+** Exercise 14
+*** 14a
+x ∈ ∪F
+x ∈ {x \vert ∃A ∈ F(x ∈ A)}
+∃A ∈ F(x ∈ A)
+∃A(A ∈ F ∧ x ∈ A)
+∃A(A ∈ ∅ ∧ x ∈ A) [F = ∅]
+
+A ∈ ∅ is always false and so (A ∈ ∅ ∧ x ∈ A) will always be false.
+
+*** 14b
+x ∈ ∩F
+x ∈ {x \vert ∀A ∈ F(x ∈ A)}
+∀A ∈ F(x ∈ A)
+∀A(A ∈ F → x ∈ A)
+∀A(A ∉ F ∨ x ∈ A) [conditional equivalence]
+∀A(A ∉ ∅ ∨ x ∈ A) [F = ∅]
+
+A ∉ ∅ is always true so (A ∉ ∅ ∨ x ∈ A) will also always be true.
+
+** Exercise 15
+*** 15a
+Let R be all sets that are not elements of themselves.
+R = {A ∈ U | A ∉ A}
+∀A ∈ U(A ∈ R ↔ A ∉ A)
+R ∈ ∀A ∈ U(A ∈ R ↔ A ∉ A)
+(R ∈ R ↔ R ∉ R)
+(T ↔ F)
+(T → F) ∧ (F → T) [biconditional equivalence]
+(F ∨ F) ∧ (T ∨ T) [conditional equivalence]
+F ∧ T
+F [contradiction]
+
+*** 15b
+A universal set of sets does not exist, the universal set can't contain itself.
