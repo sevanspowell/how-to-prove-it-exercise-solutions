@@ -1,0 +1,502 @@
+* Chapter 3.3 Exercise Solutions
+
+** Exercise 1
+
+- Prove that if ∃x(P(x) → Q(x)) is true, then ∀xP(x) → ∃xQ(x) is true.
+
+| Givens          | Goals           |
+|-----------------+-----------------|
+| ∃x(P(x) → Q(x)) | ∀xP(x) → ∃xQ(x) |
+
+Suppose ∃x(P(x) → Q(x)).
+  Suppose ∀xP(x).
+    [Proof of ∃xQ(x).]
+  Therefore ∀xP(x) → ∃xQ(x).
+Therefore if ∃x(P(x) → Q(x)) is true, ∀xP(x) → ∃xQ(x) is true.
+
+| Givens          | Goals  |
+|-----------------+--------|
+| ∃x(P(x) → Q(x)) | ∃xQ(x) |
+| ∀xP(x)          |        |
+
+Suppose ∃x(P(x) → Q(x)).
+  Choose some x_0 such that P(x_0) → Q(x_0).
+  Suppose ∀xP(x).
+    Then in particular, P(x_0), and since P(x_0) → Q(x_0), we can conclude Q(x_0).
+    Since we have found a particular value of x for which Q(x) holds, we can
+    conclude that ∃xQ(x).
+  Therefore ∀xP(x) → ∃xQ(x).
+Therefore if ∃x(P(x) → Q(x)) is true, ∀xP(x) → ∃xQ(x) is true.
+
+Suppose ∃x(P(x) → Q(x)). Choose some x_0 such that P(x_0) → Q(x_0). Suppose ∀xP(x).
+Then in particular, P(x_0), and since P(x_0) → Q(x_0), we can conclude Q(x_0). Since
+we have found a particular value of x for which Q(x) holds, we can conclude that
+∃xQ(x). Therefore ∀xP(x) → ∃xQ(x). Therefore if ∃x(P(x) → Q(x)) is true, ∀xP(x)
+→ ∃xQ(x) is true.
+
+** Exercise 2
+Prove that if A and B \ C are disjoint, then A ∩ B ⊆ C.
+
+(A ∩ B\C = ∅) → (A ∩ B ⊆ C)
+(A ∩ B\C = ∅) → ∀x(x ∈ A ∩ B → x ∈ C)
+
+Suppose A ∩ B\C = ∅.
+  [Proof of A ∩ B ⊆ C.]
+Thus, if A ∩ B\C are disjoint, then A ∩ B ⊆ C.
+
+| Givens      | Goals                 |
+|-------------+-----------------------|
+| A ∩ B\C = ∅ | ∀x(x ∈ A ∩ B → x ∈ C) |
+
+Suppose A ∩ B\C = ∅.
+  Let x be an arbitrary element.
+  Suppose x ∈ A ∩ B.
+    [Proof of x ∈ C.]
+  Thus x ∈ A ∩ B → x ∈ C.
+  But x was arbitrary, so A ∩ B ⊆ C.
+Thus, if A ∩ B\C are disjoint, then A ∩ B ⊆ C.
+
+| Givens      | Goals |
+|-------------+-------|
+| A ∩ B\C = ∅ | x ∈ C |
+| x ∈ A       |       |
+| x ∈ B       |       |
+
+| Givens              | Goals |
+|---------------------+-------|
+| ∀y(y ∈ A → y ∉ B\C) | x ∈ C |
+| x ∈ A               |       |
+| x ∈ B               |       |
+
+∀y(y ∈ A → y ∉ B\C) 
+∀y(y ∈ A → ¬(y ∈ B\C))
+∀y(y ∈ A → ¬(y ∈ B ∧ y ∉ C))
+∀y(y ∈ A → y ∉ B ∨ y ∈ C)
+
+
+Suppose A ∩ B\C = ∅.
+  Let x be an arbitrary element.
+  Suppose x ∈ A ∩ B.
+    x ∈ A and x ∈ B, so by A ∩ B\C = ∅ we can conclude that x ∈ C.
+  Thus x ∈ A ∩ B → x ∈ C.
+  But x was arbitrary, so A ∩ B ⊆ C.
+Thus, if A ∩ B\C are disjoint, then A ∩ B ⊆ C.
+
+*Theorem.* /If A ∩ B\C are disjoint, then A ∩ B ⊆ C./
+/Proof./ Suppose A ∩ B\C = ∅. Let x be an arbitrary element. Suppose x ∈ A ∩ B.
+x ∈ A and x ∈ B, so by A ∩ B\C = ∅ we can conclude that x ∈ C. Thus 
+x ∈ A ∩ B → x ∈ C. But x was arbitrary, so A ∩ B ⊆ C. Thus, if A ∩ B\C are
+disjoint, then A ∩ B ⊆ C.
+
+** Exercise 3
+- Prove that if A ⊆ B \ C then A and C are disjoint.
+
+- In symbols: A ⊆ B \ C → (A ∩ C = ∅)
+
+Suppose A ⊆ B \ C.
+  [Proof of A ∩ C = ∅.]
+Thus, if A ⊆ B \ C then A and C are disjoint.
+
+| Givens    | Goals     |
+|-----------+-----------|
+| A ⊆ B \ C | A ∩ C = ∅ |
+
+| Givens    | Goals             |
+|-----------+-------------------|
+| A ⊆ B \ C | ∀x(x ∈ A → x ∉ C) |
+
+Suppose A ⊆ B \ C.
+  Let x be an arbitrary element.
+  Suppose x ∈ A.
+    [Proof of x ∉ C.]
+  Therefore x ∈ A → x ∉ C.
+  But x was arbitrary, so A and C are disjoint.
+Thus, if A ⊆ B \ C then A and C are disjoint.
+
+| Givens    | Goals |
+|-----------+-------|
+| A ⊆ B \ C | x ∉ C |
+| x ∈ A     |       |
+
+| Givens                | Goals |
+|-----------------------+-------|
+| ∀y(y ∈ A → y ∈ B \ C) | x ∉ C |
+| x ∈ A                 |       |
+
+| Givens                    | Goals |
+|---------------------------+-------|
+| ∀y(y ∈ A → y ∈ B ∧ y ∉ C) | x ∉ C |
+| x ∈ A                     |       |
+
+Suppose A ⊆ B \ C.
+  Let x be an arbitrary element.
+  Suppose x ∈ A.
+    Suppose x ∈ C.
+      [Proof of contradiction.]
+    Therefore x ∉ C.
+  Therefore x ∈ A → x ∉ C.
+  But x was arbitrary, so A and C are disjoint.
+Thus, if A ⊆ B \ C then A and C are disjoint.
+
+| Givens                    | Goals         |
+|---------------------------+---------------|
+| ∀y(y ∈ A → y ∈ B ∧ y ∉ C) | Contradiction |
+| x ∈ A                     |               |
+| x ∈ C                     |               |
+
+
+Suppose A ⊆ B \ C.
+  Let x be an arbitrary element.
+  Suppose x ∈ A.
+    Suppose x ∈ C.
+      A ⊆ B \ C and x ∈ A means we can choose some x such that x ∈ B and x ∉ C.
+      But now we have x ∈ C and x ∉ C, which is a contradiction.
+    Therefore x ∉ C.
+  Therefore x ∈ A → x ∉ C.
+  But x was arbitrary, so A and C are disjoint.
+Thus, if A ⊆ B \ C then A and C are disjoint.
+
+*Theorem.* /If A ⊆ B \ C then A and C are disjoint./
+/Proof./ Suppose A ⊆ B \ C, but A and C are not disjoint. Then we can choose
+some x such that x ∈ A and x ∈ C. Since A ⊆ B \ C and x ∈ A it follows that 
+x ∈ B and x ∉ C. But now we have x ∈ C and x ∉ C, which is a contradiction.
+Therefore A and C are disjoint. Thus, if A ⊆ B \ C then A and C are disjoint.
+
+** Exercise 4
+*Theorem.* /Suppose A⊆℘(A). Then ℘(A)⊆℘(℘(A))./
+/Proof:/
+Let a be arbitrary.
+Suppose a∈℘(A).
+Let b be arbitrary.
+Suppose b∈a.
+Let c be arbitrary.
+Suppose c∈b.
+Since a∈℘(A), then b∈a→b∈A.
+Since b∈a and b∈a→b∈A, then b∈A.
+
+Since A⊆℘(A), then b∈A→∀e(e∈b→e∈A).
+Since b∈A and b∈A→∀e(e∈b→e∈A), then ∀e(e∈b→e∈A).
+Since ∀e(e∈b→e∈A), then c∈b→c∈A.
+Since c∈b and c∈b→c∈A, then c∈A.
+Therefore c∈b→c∈A.
+Since c was arbitrary, we can conclude that b∈℘(A).
+Therefore b∈a→b∈℘(A).
+Since b was arbitrary, we can conclude that a∈℘(℘(A)).
+Therefore a∈℘(A)→a∈℘(℘(A)).
+Since a was arbitrary, we can conclude that ℘(A)⊆℘(℘(A)).
+
+Suppose x is an arbitrary element of ℘(A). Suppose y is an arbitrary element of
+x and suppose z is an arbitrary element of y. Since x is an element of ℘(A),
+then y is an element of A. Further, since A is a subset of ℘(A), all elements of
+A are also elements of ℘(A). We know that y is an element of A and so y is an
+element of ℘(A). This implies that y is a subset of A and thus z is an element
+of A. Since x, y and z are arbitrary, we can conclude that if A is a subset of
+℘(A) then ℘(A) is a subset of ℘(℘(A)).
+
+** Exercise 5
+*** 5a
+A ⊆ P(A) when A = {}
+
+A = ∅
+P(A) = {∅, {∅}}
+
+*** 5b
+A ⊆ P(A) also when A = X ∪ P(X).
+
+Let X = {1}
+P(X) = {∅, {1}}
+A = X ∪ P(X) = {∅, 1, {1}}
+P(A) = {∅, {1}, {1, {1}} }
+??
+
+** Exercise 6
+*** 6a
+Suppose x is a real number. Prove that if x ≠ 1, then there is a real number y
+such that (y + 1)/(y - 2) = x.
+
+| Givens | Goal                      |
+|--------+---------------------------|
+| x ≠ 1  | ∀x∃y[(y + 1)/(y - 2) = x] |
+
+Let x be arbitrary.
+(y + 1)/(y - 2) = x.
+y + 1 = xy - 2x
+y(x - 1) - 2x - 1 = 0
+y = (2x + 1)/(x - 1)
+
+
+*Theorem.* /Suppose x is a real number. If x ≠ 1, then there is a real number y
+such that (y + 1)/(y - 2) = x./
+/Proof./ Re-arranging (y + 1)/(y - 2) = x for y we get: y = (2x + 1)/(x - 1).
+From this we can clearly see that the only time that (2x + 1)/(x - 1) will fail
+to produce a real number is when x is 1. Thus, we can conclude that if x a real
+number with value not equal to 1, then there is a real number y such that 
+(y + 1)/(y - 2) = x.
+
+*** 6b
+Prove that if there is a real number y such that (y + 1)/(y - 2) = x, then 
+x ≠ 1.
+
+∃y[(y + 1)/(y - 2) = x] → x ≠ 1.
+
+| Givens             | Goals                           |
+|--------------------+---------------------------------|
+| x is a real number | ∃y[(y + 1)/(y - 2) = x] → x ≠ 1 |
+
+Suppose that there exists a real number y such that (y + 1)/(y - 2) = x.
+  [Proof of x ≠ 1.]
+Thus, if there is a real number y such that (y + 1)/(y - 2) = x, then 
+x ≠ 1
+
+| Givens                  | Goals |
+|-------------------------+-------|
+| x is a real number      | x ≠ 1 |
+| ∃y[(y + 1)/(y - 2) = x] |       |
+
+Suppose that there exists a real number y such that (y + 1)/(y - 2) = x.
+  This means we know there exists some arbitrary value a that satisfies 
+  (a + 1)/(a - 2) = x.
+  [Proof of x ≠ 1.]
+Thus, if there is a real number y such that (y + 1)/(y - 2) = x, then 
+x ≠ 1
+
+| Givens                  | Goals |
+|-------------------------+-------|
+| x is a real number      | x ≠ 1 |
+| ∃y[(y + 1)/(y - 2) = x] |       |
+| (a + 1)/(a - 2) = x     |       |
+
+Suppose that there exists a real number y such that (y + 1)/(y - 2) = x.
+  This means we know there exists some arbitrary value a that satisfies 
+  (a + 1)/(a - 2) = x.
+  Suppose x = 1.
+    This means that (a + 1)/(a - 2) = 1 and a + 1 = a - 2, or 1 = -2.
+    This contradicts our assumption that a satisfies (a + 1)/(a - 2) = x.
+  Thus x ≠ 1.
+Thus, if there is a real number y such that (y + 1)/(y - 2) = x, then 
+x ≠ 1
+
+*Theorem.* If there is a real number y such that (y + 1)/(y - 2) = x, then 
+x ≠ 1.
+/Proof./ Suppose that there exists a real number y such that 
+(y + 1)/(y - 2) = x. This means we know there exists some arbitrary value a that
+satisfies (a + 1)/(a - 2) = x. If we suppose that x = 1. This means that 
+(a + 1)/(a - 2) = 1 and a + 1 = a - 2, or 1 = -2. This contradicts our
+supposition that a satisfies (a + 1)/(a - 2) = x. Thus x ≠ 1. Thus, if there is
+a real number y such that (y + 1)/(y - 2) = x, then x ≠ 1.
+
+** Exercise 7
+Prove that for every real number x, if x > 2 then there is a real number y such
+that y + 1/y = x.
+
+∀x(x > 2 → ∃y(y + 1/y = x)).
+
+| Given              | Goals                       |
+|--------------------+-----------------------------|
+| x is a real number | ∀x(x > 2 → ∃y(y + 1/y = x)) |
+
+Let x be arbitrary and suppose x > 2.
+  [Proof of ∃y(y + 1/y = x).]
+Since x was arbitrary, we can conclude that for every real number x, if x > 2
+then there is a real number y such that y + 1/y = x.
+
+| Given              | Goals           |
+|--------------------+-----------------|
+| x is a real number | ∃y(y + 1/y = x) |
+| x > 2              |                 |
+
+y^2/y + 1/y = x
+(y^2 + 1)/y = x
+(y^2 + 1) = xy
+y^2 - xy + 1 = 0
+y = [-x ± √(x^2 - 4)]/2
+So if x > 2, there is a real number such that y + 1/y = x.
+
+Let x be arbitrary and suppose x > 2.
+  By the quadratic formula, we find that y = [-x ± √(x^2 - 4)]/2 satisfies 
+  the formula y + 1/y = x and is defined since x^2 - 4 > 0. Thus, if x > 2,
+  ∃y(y + 1/y = x).
+Since x was arbitrary, we can conclude that for every real number x, if x > 2
+then there is a real number y such that y + 1/y = x.
+
+*Theorem.* For every real number x, if x > 2 then there is a real number y such
+that y + 1/y = x.
+/Proof./ Let x be arbitrary and suppose x > 2. y = [-x ± √(x^2 - 4)]/2 satisfies
+the formula y + 1/y = x and is defined since x^2 - 4 > 0. Since x was arbitrary,
+we can conclude that for every real number x, if x > 2 then there is a real
+number y such that y + 1/y = x.
+
+** Exercise 8
+
+| Given | Goals  |
+|-------+--------|
+| A ∈ F | A ⊆ ∪F |
+
+| Given | Goals              |
+|-------+--------------------|
+| A ∈ F | ∀a(a ∈ A → a ∈ ∪F) |
+
+| Given | Goals              |
+|-------+--------------------|
+| A ∈ F | ∀a(a ∈ A → a ∈ ∪F) |
+
+*Theorem.* if F is a family of sets and A ∈ F, then A ⊆ ∪F.
+/Proof./ Suppose a is an arbitrary element of A. Because A is an element of F
+and a is an element of A, a is also an element of ∪F. Since a is arbitrary, we
+can conclude that if F is a family of sets and A ∈ F, then A ⊆ ∪F.
+
+** Exercise 9
+Prove that if F is a family of sets and A ∈ F, then ∩F ⊆ A.
+
+| Given | Goals  |
+|-------+--------|
+| A ∈ F | ∩F ⊆ A |
+
+| Given | Goals              |
+|-------+--------------------|
+| A ∈ F | ∀x(x ∈ ∩F → x ∈ A) |
+
+Suppose x is an arbitrary element of ∩F.
+  [Proof of x ∈ A.]
+Because x is arbitrary, we can conclude that ∩F is a subset of A.
+
+| Given  | Goals |
+|--------+-------|
+| A ∈ F  | x ∈ A |
+| x ∈ ∩F |       |
+
+| Given             | Goals |
+|-------------------+-------|
+| A ∈ F             | x ∈ A |
+| ∀B(B ∈ F → x ∈ B) |       |
+
+Suppose x is an arbitrary element of ∩F.
+  x ∈ ∩F and A ∈ F implies x ∈ A.
+Because x is arbitrary, we can conclude that ∩F is a subset of A.
+
+*Theorem.* If F is a family of sets and A ∈ F, then ∩F ⊆ A.
+/Proof./ Suppose x is an arbitrary element of ∩F. This implies that x is an
+element of any set that is an element of F. A is such a set and thus x is an
+element of A. Because x is arbitrary, we can conclude that ∩F is a subset of A.
+
+** Exercise 10
+Suppose that F is a nonempty family of sets, B is a set, and ∀A ∈ F(B ⊆ A).
+Prove that B ⊆ ∩F.
+
+| Given         | Goals  |
+|---------------+--------|
+| F ≠ ∅         | B ⊆ ∩F |
+| ∀A ∈ F(B ⊆ A) |        |
+
+| Given         | Goals              |
+|---------------+--------------------|
+| F ≠ ∅         | ∀x(x ∈ B → x ∈ ∩F) |
+| ∀A ∈ F(B ⊆ A) |                    |
+
+Suppose x is an arbitrary element of B.
+  [Proof of x ∈ ∩F.]
+Because x is arbitrary, we can conclude that B ⊆ ∩F.
+
+| Given         | Goals  |
+|---------------+--------|
+| F ≠ ∅         | x ∈ ∩F |
+| ∀A ∈ F(B ⊆ A) |        |
+| x ∈ B         |        |
+
+| Given             | Goals             |
+|-------------------+-------------------|
+| F ≠ ∅             | ∀W(W ∈ F → x ∈ W) |
+| ∀A(A ∈ F → B ⊆ A) |                   |
+| x ∈ B             |                   |
+
+Suppose x is an arbitrary element of B.
+  Suppose W is an arbitrary set of F.
+    [Proof of x ∈ W.]
+  Because W was arbitrary, we can conclude that x ∈ ∩F.
+Because x was arbitrary, we can conclude that B ⊆ ∩F.
+
+| Given             | Goals |
+|-------------------+-------|
+| F ≠ ∅             | x ∈ W |
+| ∀A(A ∈ F → B ⊆ A) |       |
+| x ∈ B             |       |
+| W ∈ F             |       |
+
+Suppose x is an arbitrary element of B.
+  Suppose W is an arbitrary set of F.
+    ∀A(A ∈ F → B ⊆ A) and W ∈ F imply B ⊆ W.
+    B ⊆ W that ∀y(y ∈ B → y ∈ W).
+    ∀y(y ∈ B → y ∈ W) and x ∈ B implies x ∈ W.
+  Because W was arbitrary, we can conclude that x ∈ ∩F.
+Because x was arbitrary, we can conclude that B ⊆ ∩F.
+
+*Theorem*. Suppose that F is a nonempty family of sets, B is a set, and 
+∀A ∈ F(B ⊆ A), then B ⊆ ∩F.
+/Proof./ Suppose x is an arbitrary element of B. Suppose W is an arbitrary set
+of F. ∀A ∈ F(B ⊆ A) and W ∈ F implies that B is a subset of W. Because x is an
+element of B, this implies that x is also an element of W. Because W was
+arbitrary, we can conclude that x ∈ ∩F. Because x was arbitrary, we can conclude
+that B ⊆ ∩F. Thus, if F is a nonempty family of sets, B is a set, and 
+∀A ∈ F(B ⊆ A), then B ⊆ ∩F.
+
+** Exercise 11
+Suppose that F is a family of sets. Prove that if ∅ ∈ F, then ∩F = ∅.
+
+| Given | Goals  |
+|-------+--------|
+| ∅ ∈ F | ∩F = ∅ |
+
+| Given | Goals      |
+|-------+------------|
+| ∅ ∈ F | ∀x(x ∉ ∩F) |
+
+Assume x is an arbitrary element.
+  [Proof of x ∉ ∩F.]
+Because x was arbitrary we can conclude that ∩F = ∅.
+
+| Given | Goals  |
+|-------+--------|
+| ∅ ∈ F | x ∉ ∩F |
+
+| Given | Goals  |
+|-------+--------|
+| ∅ ∈ F | ¬(x ∈ ∩F) |
+
+| Given | Goals                |
+|-------+----------------------|
+| ∅ ∈ F | ¬(∀A(A ∈ F → x ∈ A)) |
+|       |                      |
+
+| Given | Goals                |
+|-------+----------------------|
+| ∅ ∈ F | ¬(∀A(A ∈ F → x ∈ A)) |
+
+| Given | Goals                |
+|-------+----------------------|
+| ∅ ∈ F | ¬(∀A(A ∉ F ∨ x ∈ A)) |
+
+| Given | Goals             |
+|-------+-------------------|
+| ∅ ∈ F | ∃A(A ∈ F ∧ x ∉ A) |
+
+Assume x is an arbitrary element.
+  Let A = ∅.
+  [Proof of x ∉ ∩F.]
+Because x was arbitrary we can conclude that ∩F = ∅.
+
+| Given | Goals         |
+|-------+---------------|
+| ∅ ∈ F | ∅ ∈ F ∧ x ∉ ∅ |
+
+∩F = ∅ implies that ∀x(x ∉ ∩F).
+Assume x is an arbitrary element.
+  x ∉ ∩F implies ∃A(A ∈ F ∧ x ∉ A).
+  Let A = ∅, this implies ∅ ∈ F ∧ x ∉ ∅.
+  ∅ ∈ F and x ∉ ∅ both hold for arbitrary x.
+Because x was arbitrary we can conclude that ∩F = ∅.
+
+*Theorem.* Suppose that F is a family of sets. If ∅ ∈ F, then ∩F = ∅.
+/Proof./ ∩F = ∅ implies that ∀x(x ∉ ∩F). Assume x is an arbitrary element. 
+x ∉ ∩F implies ∃A(A ∈ F ∧ x ∉ A). Let A = ∅, this implies ∅ ∈ F ∧ x ∉ ∅, which
+both hold for arbitrary x. Thus we can conclude x ∉ ∩F. Because x was arbitrary
+we can conclude that ∩F = ∅.

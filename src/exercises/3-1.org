@@ -1,0 +1,363 @@
+* Chapter 3.1 Exercise Solutions
+
+** Exercise 1
+Consider the following theorem.
+
+*Theorem.* /Suppose n is an integer larger than 1 and n is not prime. Then 2^n -
+1 is not prime./
+
+*** 1a
+
+Hypotheses: n ∈ ℕ, n > 1, n is not prime.
+Conclusion: 2^n - 1 is not prime.
+
+The hypotheses are true when n = 6. In this instance, the theorem tells us that
+2^6 - 1 = 63 is not prime. It is correct in this instance (counter-example to 63
+being prime: 63/3 = 21, therefore not prime).
+
+*** 1b
+
+15 satisfies the hypotheses so we can conclude that 2^15 - 1 is not prime. We can
+confirm that 32767 is not prime by providing a counter-example to the statement
+"32767 is prime": 32767 / 7 = 4681. 32767 is divisible by 7 and so is not prime.
+
+*** 1c
+
+11 does not satifsy the hypotheses because 11 is prime, therefore we can
+conclude nothing from the theorem in this case.
+
+** Exercise 2
+*** 2a
+Hypotheses: b^2 > 4ac
+Conclusion: ax^2 + bx + c = 0 has exactly two real solutions.
+
+*** 2b
+Because a, b, and c are free variables.
+
+*** 2c
+a = 2
+b = -5
+c = 3
+
+b^2 = 25
+4ac = 4*2*3 = 24
+25 > 24 therefore hypotheses are satisfied.
+So, we can conclude that 2x^2 - 5x + 3 = 0 has exactly two real solutions.
+
+*** 2d
+a = 2
+b = 4
+c = 3
+
+b^2 = 16
+4ac = 4*2*3 = 24
+16 is not greater than 24, therefore the hypotheses are not satisfied.
+So, we can conlude nothing from the theorem, the conclusion can be true or false
+if the hypotheses are not satisfied.
+
+** Exercise 3
+
+Hypotheses: n ∈ ℕ, n > 2, n is not a prime number
+Conclusion: 2n + 13 is not a prime number
+
+9 satisfies the hypotheses.
+2*9 + 13 = 31, which is a prime number. 9 is a counter-example to this theorem
+and so the theorem is incorrect.
+
+** Exercise 4
+/Proof./ Suppose 0 < a < b. Then b - a > 0.
+Multiplying both sides by the positive number (b + a), we get
+(b + a)*(b - a) > (b + a)*0 or b^2 - a^2 > 0.
+Since b^2 - a^2 > 0, it follows that a^2 < b^2. Therefore if 0 < a < b then a^2 < b^2.
+
+| Givens    | Goals       |
+|-----------+-------------|
+| 0 < a < b | b^2 - a^2 > 0 |
+| b - a > 0 |             |
+
+b - a > 0. Multiply both sides by positive number (b + a) [0 < a < b].
+(b + a)*(b - a) > (b + a)*0
+= b^2 - ab + ab - a^2 > 0
+= b^2 - a^2 > 0
+
+** Exercise 5
+
+Suppose that a and b are real numbers. Prove that if a < b < 0 then a^2 > b^2.
+
+/Proof./ Suppose that a and b are real numbers. Assume a < b < 0, then a < b.
+Negating b on both sides, we get a - b > 0. Multiplying both sides by the
+positive number (a + b), we get a^2 - b^2 > 0 or a^2 > b^2. Therefore, if a < b < 0
+then a^2 > b^2.
+
+
+| Givens                   | Goals   |
+|--------------------------+---------|
+| a and b are real numbers | a^2 > b^2 |
+| a < b < 0                |         |
+
+a < b
+a - b > 0                   { -b both sides }
+(a + b)*(a - b) > (a + b)*0 { multiply (a + b) both sides }
+a^2 - b^2 > 0                  { simplify }
+a^2 > b^2                      { plus b^2 both sides }
+
+** Exercise 6
+
+Suppose a and b are real numbers. Prove that if 0 < a < b then 1/b < 1/a.
+
+| Givens                   | Goals                 |
+|--------------------------+-----------------------|
+| a and b are real numbers | 0 < a < b → 1/b < 1/a |
+
+| a and b are real numbers | 1/b < 1/a |
+| 0 < a < b                |           |
+
+0 < a < b
+
+a < b
+a < b   { multiply both sides by 1/b }
+a/b < 1 { multiply both sides by 1/a }
+1/b < 1/a
+
+/Proof./ Suppose 0 < a < b. Multiplying both sides of the inequality a < b by
+1/b, we get a/b < 1. Then, multiplying both sides of the inequality by 1/a, we
+get 1/b < 1/a. Thus, we can conclude that if 0 < a < b, then 1/b < 1/a.
+
+** Exercise 7
+
+Suppose that a is a real number. Prove that if a^3 > a than a^5 > a.
+
+| Givens             | Goals           |
+|--------------------+-----------------|
+| a is a real number | a^3 > a → a^5 > a |
+
+| a is a real number | a^5 > a |
+| a^3 > a             |        |
+
+a^5 - a = (a^3 - a) * (a^2 + 1) = a^5 + a^3 - a^3 - a
+
+a^3 > a
+a^3 - a > 0              { minus a from both sides }
+(a^3 - a) * (a^2 + 1) > 0 { multiply both sides by (a^2 + 1) }
+a^5 - a > 0              { plus a both sides }
+a^5 > a
+
+/Proof./ Suppose a^3 > a. Minusing both sides of the inequality by a, we get 
+a^3 - a > 0. Multiplying both sides by (a^2 + 1), we get a^5 - a > 0. If we then
+add a to both sides, we get a^5 > a. Thus, we can conclude that if a^3 > a, then
+a^5 > a.
+
+** Exercise 8
+
+Suppose A \ B ⊆ C ∩ D and x ∈ A. Prove that if x ∉ D then x ∈ B.
+
+| Givens        | Goals         |
+|---------------+---------------|
+| A \ B ⊆ C ∩ D | x ∉ D → x ∈ B |
+| x ∈ A         |               |
+
+| A \ B ⊆ C ∩ D | x ∉ B → x ∈ D | { contrapositive }
+| x ∈ A         |               |
+
+| A \ B ⊆ C ∩ D | x ∈ D |
+| x ∈ A         |       |
+| x ∉ B         |       |
+
+A \ B ⊆ C ∩ D
+∀x((x ∈ A ∧ x ∉ B) → (x ∈ C ∧ x ∈ D)) { defn. of difference and intersection }
+∀x(T → (x ∈ C ∧ x ∈ D)) { givens }
+Therefore (x ∈ C ∧ x ∈ D) must be true { logical implication }
+Therefore x ∈ D is true { contrapositive statement is proven }
+
+/Proof./ Assume the contrapositive "if x ∉ B then x ∈ D". It follows from A \ B
+⊆ C ∩ D that x ∈ D is true and that we've proven the contrapositive of "if x ∉ B
+then x ∈ D". We can therefore conclude that if x ∉ D then x ∈ B.
+
+** Exercise 9
+
+Suppose a and b are real numbers. Prove that if a < b then (a + b)/2 < b
+
+| Givens                   | Goals                     |
+|--------------------------+---------------------------|
+| a and b are real numbers | (a < b) → ((a + b)/2 < b) |
+
+| a and b are real numbers | (a + b)/2 < b |
+| a < b                    |               |
+
+a < b
+a + b < 2b { add b both sides }
+(a + b)/2 < b { divide both sides by 2 }
+
+/Proof./ Suppose that a < b. If we add b to both sides of the equality and
+then divide by 2, we get (a + b)/2 < b. Therefore (a < b) → ((a + b)/2 < b).
+
+** Exercise 10
+Suppose x is a real number and x ≠ 0. Prove that if (∛x + 5)/(x^2 + 6) = 1/x then
+x ≠ 8.
+
+| Givens             | Goals                           |
+|--------------------+---------------------------------|
+| x is a real number | (∛x + 5)/(x^2 + 6) = 1/x → x ≠ 8 |
+| x ≠ 0              |                                 |
+
+| x is a real number | x = 8 → (∛x + 5)/(x^2 + 6) ≠ 1/x | { contrapositive }
+| x ≠ 0              |                                 |
+
+| x is a real number | (∛x + 5)/(x^2 + 6) ≠ 1/x |
+| x ≠ 0              |                         |
+| x = 8              |                         |
+
+(∛x + 5)/(x^2 + 6) ≠ 1/x
+LHS: 
+(∛8 + 5)/(8^2 + 6) 
+(2 + 5)/(64 + 6) 
+7/70 
+1/10 
+
+RHS:
+1/8
+
+LHS ≠ RHS, therefore contrapositive proven.
+
+/Proof./ We will prove the contrapositive: "if x = 8 then (∛x + 5)/(x^2 + 6) ≠
+1/x". Supposing x = 8, and solving the equation for x = 8, we conclude that 
+1/10 ≠ 1/8. Therefore if (∛x + 5)/(x^2 + 6) = 1/x then x ≠ 8.
+
+** Exercise 11
+Suppose a, b, c, and d are real numbers, 0 < a < b and d > 0. Prove that if 
+ac ≥ bd then c > d.
+
+| Givens                          | Goals           |
+|---------------------------------+-----------------|
+| a, b, c, and d are real numbers | ac ≥ bd → c > d |
+| 0 < a < b                       |                 |
+| d > 0                           |                 |
+
+| a, b, c, and d are real numbers | c > d |
+| 0 < a < b                       |       |
+| d > 0                           |       |
+| ac ≥ bd                         |       |
+
+a < b          { given }
+ad < bd        { multiply both sides of inequality by d }
+ad < bd ≤ ac   { given }
+ad < ac
+d < c
+c > d
+
+/Proof./ Suppose ac ≥ bd. Taking the given inequality a < b and multiplying both
+sides by the positive number d, we arrive at ad < bd. By the given inequality we
+know ac ≥ bd and so it follows that ad < ac. Dividing both sides of the
+inequality by a we find d < c, or c > d. Therefore we can conclude that if 
+ac ≥ bd then c > d.
+
+** Exercise 12
+Suppose x and y are real numbers, and 3x + 2y ≤ 5. Prove that if x > 1 
+then y < 1.
+
+| Givens                           | Goals         |
+|----------------------------------+---------------|
+| Suppose x and y are real numbers | x > 1 → y < 1 |
+| 3x + 2y ≤ 5                      |               |
+
+
+| Suppose x and y are real numbers | y < 1 |
+| 3x + 2y ≤ 5                      |       |
+| x > 1                            |       |
+
+3x + 2y ≤ 5
+3x ≤ 5 - 2y
+x ≤ (5 - 2y)/3       { re-arrange }
+1 < x ≤ (5 - 2y)/3   { combine with given inequality } 
+1 < (5 - 2y)/3      
+y < 1                { rearrange }
+
+/Proof./ Suppose x > 1. Given 3x + 2y ≤ 5, we can conclude x ≤ (5 - 2y)/3.
+Combining this with our other given inequality we get 1 < x ≤ (5 - 2y)/3.
+Re-arranging we obtain y < 1. Therefore if x > 1 then y < 1.
+
+** Exercise 13
+Suppose that x and y are real numbers. Prove that if x^2 + y = -3 and 2x - y = 2
+then x = -1.
+
+| Givens                   | Goals                             |
+|--------------------------+-----------------------------------|
+| x and y are real numbers | x^2 + y = -3 ∧ 2x - y = 2 → x = -1 |
+
+| x and y are real numbers | x = -1 |
+| x^2 + y = -3              |        |
+| 2x - y = 2               |        |
+
+x^2 + y = -3
+y = -3 - x^2 { minux x^2 both sides }
+
+2x - y = 2
+2x + 3 + x^2 = 2 { substitute previous result }
+x^2 + 2x + 1 = 0 { re-arrange }
+(x + 1)^2 = 0
+x = -1
+
+/Proof./ Suppose x^2 + y = -3 and 2x - y = 2. Re-arranging x^2 + y = -3 we obtain
+y = -3 - x^2. Substituting this for y in the second equation and re-arranging we
+obtain x^2 + 2x + 1 = 0 or (x + 1)^2 = 0. From this we obtain x = -1. Thus we can
+conclude that if x^2 + y = -3 and 2x - y = 2 then x = -1.
+
+** Exercise 14
+Suppose x > 3 and y < 2. Then x^2 - 2y > 5.
+
+| Givens | Goals       |
+|--------+-------------|
+| x > 3  | x^2 - 2y > 5 |
+| y < 2  |             |
+
+0 < 3 < x  { given }
+x^2 > 9     { by theorem in Example 3.1.2 }
+
+y < 2      { given }
+2y < 4     { multiply both sides by 2 }
+2y + 5 < 9 { add 5 to both sides }
+
+2y + 5 < 9 < x^2 { combine inequalities }
+x^2 - 2y > 5
+
+/Proof./ Suppose x > 3 and y < 2. Using the theorem in Example 3.1.2 and our
+given x > 3, we can say that x^2 > 9. Additionally, multiplying our other given
+by 2 and adding 5, we get 2y + 5 < 9. Combining these inequalities we get 2y + 5
+< 9 < x^2, from which we obtain x^2 - 2y > 5. Therefore, if x > 3 and y < 2, then
+x^2 - 2y > 5.
+
+** Exercise 15
+
+*Theorem.* /Suppose x is a real number and x ≠ 4. If (2x - 5)/(x - 4) = 3 then
+x = 7./
+
+*** 15a
+Only proves the theorem x = 7 → (2x - 5)/(x - 4) = 3, which is not equivalent to
+the theorem (2x - 5)/(x - 4) = 3 → x = 7.
+
+*** 15b
+
+| Givens               | Goals |
+|----------------------+-------|
+| x is a real number   | x = 7 |
+| x ≠ 4                |       |
+| (2x - 5)/(x - 4) = 3 |       |
+
+2x - 5 = 3*(x-4)
+2x - 5 = 3x - 12
+x = 7
+
+/Proof./ Suppose (2x - 5)/(x - 4) = 3. Multiplying both sides by (x - 4) and
+re-arranging, we get x = 7. Therefore, if (2x - 5)/(x - 4) = 3 then x = 7.
+
+** Exercise 16
+
+*Incorrect Theorem.* /Suppose that x and y are real numbers and x ≠ 3. 
+If x^{2}y = 9y then y = 0.
+
+*** 16a
+The proof makes the assertion that if x ≠ 3, x^2 ≠ 9. But if x = -3, this
+assertion does not hold.
+
+*** 16b
+Counterexample: x = -3
